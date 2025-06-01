@@ -6,7 +6,8 @@ body {
 }
 
 main {
-  padding-top: 15lvh;
+  padding-top: 20lvh;
+  padding-inline: 5%;
 }
 
 * {

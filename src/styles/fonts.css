@@ -29,7 +29,36 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "DM-bold";
+  src: url("./fonts/DMSans-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DM-light";
+  src: url("./fonts/DMSans-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DM-medium";
+  src: url("./fonts/DMSans-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DM-SemiBold";
+  src: url("./fonts/DMSans-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
+  --font-title-medium: "DM-medium", sans-serif;
+  --font-title-semiBold: "DM-SemiBold", sans-serif;
+  --font-title-bold: "DM-bold", sans-serif;
+  --font-title-light: "DM-light", sans-serif;
   --font-text-medium: "Rubik-Medium", sans-serif;
   --font-text-light: "Rubik-Light", sans-serif;
   --font-text-semiBold: "Rubik-SemiBold", sans-serif;

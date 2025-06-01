@@ -4,5 +4,5 @@
 }
 .customTitle {
   color: var(--text-color);
-  font-family: var(--font-text-bold);
+  font-family: var(--font-title-bold);
 }

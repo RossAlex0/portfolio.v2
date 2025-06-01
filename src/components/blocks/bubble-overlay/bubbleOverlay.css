@@ -1,0 +1,12 @@
+.bubbleButton {
+  height: 100%;
+  min-width: 7rem;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: var(--dark-background);
+  cursor: pointer;
+}

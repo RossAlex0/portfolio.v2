@@ -1,5 +1,5 @@
-import CustomText from "@/components/ui/Text";
 import WordsRotate from "@/components/ui/words-rotate";
+import CustomText from "@/components/ui/custom-text";
 
 import "./hero.css";
 

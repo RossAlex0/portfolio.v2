@@ -1,0 +1,12 @@
+.section_title_container {
+  width: 100%;
+  gap: 3rem;
+  overflow: hidden;
+  margin-bottom: 4rem;
+}
+
+.section_title_line {
+  height: 1px;
+  width: 55%;
+  background-color: var(--dark-background);
+}

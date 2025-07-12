@@ -1,0 +1,51 @@
+.button_custom {
+  border: 0.5px solid var(--dark-background);
+  background-color: var(--dark-background);
+  border-radius: 32px;
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 1.3s ease;
+}
+
+.button_custom p {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.6s ease;
+}
+
+.text_arrow {
+  transform: rotate(-45deg);
+  margin-left: 4px;
+  display: inline-block;
+  z-index: 1;
+  transition: transform 0.6s ease;
+  position: relative;
+}
+
+.button_overlay {
+  height: 260%;
+  width: 160%;
+  border-radius: 100%;
+  background-color: var(--background);
+  position: absolute;
+  transform: translate(-32%, 20%);
+  transition: transform 0.6s ease;
+}
+
+.button_custom:hover .button_overlay {
+  border: 0.5px solid var(--dark-background);
+}
+
+.button_custom:hover .text_arrow {
+  transform: rotate(135deg);
+}
+
+.button_custom:hover p {
+  color: var(--text-color) !important;
+}
+
+.button_custom:hover .button_overlay {
+  transform: translate(-32%, -50%);
+}

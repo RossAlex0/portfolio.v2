@@ -1,0 +1,14 @@
+.hero_text {
+  width: 85%;
+}
+
+.hero_title {
+  color: var(--text-color);
+  font-size: 450%;
+  font-family: var(--font-title-bold);
+  line-height: 1.3;
+}
+
+.hero_title:last-child {
+  display: flex;
+}

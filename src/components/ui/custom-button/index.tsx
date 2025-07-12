@@ -1,4 +1,4 @@
-import Text from "@/components/ui/Text";
+import CustomText from "@/components/ui/custom-text";
 import { ReactNode } from "react";
 import "./custom-button.css";
 
@@ -11,7 +11,7 @@ export default function CustomButton({
 }) {
   return (
     <button type="button" onClick={callback} className="button_custom">
-      <Text style={{ color: "#fffcee" }}>
+      <CustomText style={{ color: "#fffcee" }}>
         {children ? (
           children
         ) : (
@@ -19,7 +19,7 @@ export default function CustomButton({
             Contact Me <span className="text_arrow">&#10132;</span>
           </>
         )}
-      </Text>
+      </CustomText>
       <div className="button_overlay"></div>
     </button>
   );

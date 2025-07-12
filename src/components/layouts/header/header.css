@@ -6,7 +6,10 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  background-color: var(--background);
+  background-color: #fffceed5;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 100;
 }
 
 .header_text {
@@ -16,8 +19,29 @@ header {
   align-items: center;
 }
 
-.separator {
+.header_separator {
   height: 5lvh;
   width: 1px;
   background-color: var(--text-color);
+}
+
+.nav-link {
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  height: 1.5px;
+  border-radius: 24px;
+  background-color: var(--text-color);
+  width: 0;
+  transition: width 0.5s;
+  bottom: -3px;
+  left: 0;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }

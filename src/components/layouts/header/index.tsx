@@ -1,24 +1,26 @@
-import Text from "@/components/elements/Text";
+import Text from "@/components/ui/Text";
+import CustomButton from "@/components/ui/custom-button";
 import "./header.css";
-import ButtonContact from "@/components/blocks/contact-button";
 
 export default function Header() {
   const infos = [
-    { link: "", label: "Projets" },
-    { link: "", label: "Infos" },
-    { link: "", label: "Contact" },
+    { link: "#projects", label: "Projets" },
+    { link: "#about", label: "Infos" },
+    { link: "#skill", label: "Compétences" },
   ];
 
   return (
     <header>
       <div className="header_text">
-        <Text title>Alex Rossignol</Text>
-        <span className="separator"></span>
+        <Text isTitle>Alex Rossignol</Text>
+        <span className="header_separator"></span>
         {infos.map((info) => (
-          <Text key={info.label}>{info.label}</Text>
+          <a key={info.label} href={info.link} className="nav-link">
+            <Text>{info.label}</Text>
+          </a>
         ))}
       </div>
-      <ButtonContact />
+      <CustomButton />
     </header>
   );
 }

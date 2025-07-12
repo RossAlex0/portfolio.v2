@@ -1,4 +1,4 @@
-import Text from "@/components/ui/Text";
+import CustomText from "@/components/ui/custom-text";
 import CustomButton from "@/components/ui/custom-button";
 import "./header.css";
 
@@ -12,11 +12,11 @@ export default function Header() {
   return (
     <header>
       <div className="header_text">
-        <Text isTitle>Alex Rossignol</Text>
+        <CustomText isTitle>Alex Rossignol</CustomText>
         <span className="header_separator"></span>
         {infos.map((info) => (
           <a key={info.label} href={info.link} className="nav-link">
-            <Text>{info.label}</Text>
+            <CustomText>{info.label}</CustomText>
           </a>
         ))}
       </div>

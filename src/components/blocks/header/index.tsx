@@ -5,8 +5,8 @@ import "./header.css";
 export default function Header() {
   const infos = [
     { link: "#projects", label: "Projets" },
-    { link: "#about", label: "Infos" },
     { link: "#skill", label: "Compétences" },
+    { link: "#about", label: "Infos" },
   ];
 
   return (

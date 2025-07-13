@@ -1,5 +1,9 @@
+.hero {
+  height: 100lvh;
+}
 .hero_text {
   width: 85%;
+  margin-top: 4rem;
 }
 
 .hero_title {

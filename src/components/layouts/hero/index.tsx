@@ -5,7 +5,7 @@ import "./hero.css";
 
 export default function Hero() {
   return (
-    <div className="section_container">
+    <div className="hero section_container">
       <div className="hero_text">
         <CustomText className="hero_title">
           Passionate <i>developer</i> of web and mobile solutions,

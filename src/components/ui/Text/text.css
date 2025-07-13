@@ -1,8 +1,0 @@
-.custom_text {
-  color: var(--text-color);
-  font-family: var(--font-text-regular);
-}
-.custom_title {
-  color: var(--text-color);
-  font-family: var(--font-title-bold);
-}

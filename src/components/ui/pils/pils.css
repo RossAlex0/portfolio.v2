@@ -1,0 +1,13 @@
+.pils_container {
+  padding: 0.5rem 1rem;
+  border-radius: 32px;
+  background-color: #0a1117dd;
+  width: fit-content;
+  height: fit-content;
+}
+
+.pils_content {
+  color: var(--white-text-color);
+  font-size: 0.8em;
+  white-space: nowrap;
+}

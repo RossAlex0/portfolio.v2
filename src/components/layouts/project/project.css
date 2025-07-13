@@ -1,0 +1,64 @@
+.project_container {
+  width: 100%;
+  gap: 2rem;
+}
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -16px;
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 16px;
+  background-clip: padding-box;
+}
+
+.card_container {
+  background-color: #1f1f1f;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.card_descriptif {
+  position: absolute;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  bottom: 0;
+}
+
+.card_container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.card_pils {
+  bottom: 0;
+  position: absolute;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.link_dev {
+  top: 0;
+  right: 0;
+  position: absolute;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+.round_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  border-radius: 100%;
+  background-color: #0a1117dd;
+  border: none;
+  cursor: pointer;
+}

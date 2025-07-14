@@ -3,9 +3,9 @@
 import Hero from "@/components/layouts/hero";
 import Header from "@/components/blocks/header";
 import Project from "@/components/layouts/project";
-
-import "@/styles/globals.css";
 import Skill from "@/components/layouts/skill";
+import About from "@/components/layouts/about";
+import Footer from "@/components/blocks/footer";
 
 export default function Home() {
   return (
@@ -15,6 +15,8 @@ export default function Home() {
         <Hero />
         <Project />
         <Skill />
+        <About />
+        <Footer />
       </main>
     </>
   );

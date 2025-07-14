@@ -20,6 +20,7 @@ export enum FormatProject {
   mobile = "Mobile",
   tablet = "Tablette",
   server = "Server",
+  api = "API",
 }
 export enum TypeProject {
   Landing = "Landing Page",

@@ -173,7 +173,7 @@ export const projects: Project[] = [
     link: null,
     image: "/images/mailServer.webp",
     video: null,
-    format: FormatProject.web,
+    format: FormatProject.api,
     type: TypeProject.BackServerless,
     description: {
       fr: "Ce projet backend serverless a été conçu pour gérer l’envoi d’emails via Gmail, à partir d’un formulaire de contact. Il repose sur une architecture sécurisée avec validation stricte des champs, système de tokens pour contrôler l’accès, et un limiteur de requêtes pour éviter les abus. L’ensemble garantit une gestion fiable, performante et sécurisée des soumissions utilisateur.",
@@ -288,3 +288,51 @@ export const toolSkills: string[] = [
   "Grafana",
   "Vercel",
 ];
+
+export const timelineItems = [
+  {
+    year: "2025",
+    title: "Hinfact",
+    description: "Développeur Full-Stack",
+    accent: true,
+  },
+  {
+    year: "2025",
+    title: "Projet Cercle Des Vignerons",
+    description: "Développeur Front-End & Design",
+    accent: false,
+  },
+  {
+    year: "2025",
+    title: "Formation Swift",
+    description:
+      "Open Classroom - Apprentissage language de programmation Ios/SwiftUi",
+    accent: false,
+  },
+  {
+    year: "2024",
+    title: "Projet Portfolio Product Designer",
+    description: "Développeur Front-End",
+    accent: false,
+  },
+  {
+    year: "2024",
+    title: "Formation développeur web et web mobile",
+    description: "WildCodeSchool - Passage du titre de développeur web",
+    accent: false,
+  },
+  {
+    year: "2023",
+    title: "Formation au développement web",
+    description:
+      "Open Classroom - Apprentissage des bases du dévellopement web - HTML - CSS - JS",
+    accent: false,
+  },
+  {
+    year: "2017",
+    title: "Administration Pénitentiaire",
+    description:
+      "Equipe de sécurité locale pénitentiaire - escorte & interventions",
+    accent: false,
+  },
+] as const;

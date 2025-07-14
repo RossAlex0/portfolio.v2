@@ -1,0 +1,31 @@
+.input_container {
+  height: 2rem;
+  width: 100%;
+  position: relative;
+}
+
+.custom_input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background: none;
+  border: none;
+  color: var(--white-text-color);
+  padding-left: 0.5rem;
+}
+
+.input_label {
+  position: absolute;
+  font-family: var(--font-text-medium);
+  color: var(--white-text-color);
+  transform-origin: top left;
+  color: #fffceeab;
+}
+
+.focus {
+  border-bottom: 1px solid white;
+}
+
+.not_focus {
+  border-bottom: 0.5px solid var(--background);
+}

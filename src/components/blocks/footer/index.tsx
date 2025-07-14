@@ -4,11 +4,19 @@ import { motion } from "framer-motion";
 
 import "./footer.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <footer className="footer_container flex_column_center_center">
-      <div className="footer_block flex_column">
+      <motion.div
+        className="footer_block flex_column"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ amount: 0.2, once: true }}
+      >
         <div className="footer_head_block flex_row">
           <div className="footer_head_infos flex_column">
             <div className="infos_title flex_row">
@@ -84,6 +92,7 @@ export default function Footer() {
                   background: "none",
                   cursor: "pointer",
                 }}
+                onClick={() => router.push("/contact")}
               >
                 <CustomIcon name="TbMail" pack="Tb" size={28} color="#fffcee" />
               </motion.button>
@@ -108,7 +117,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
       <h1 className="title_footer">Developpeur Full Stack.</h1>
     </footer>
   );

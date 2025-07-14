@@ -1,17 +1,16 @@
 import CustomText from "@/components/ui/custom-text";
-import { ReactNode } from "react";
+import { CustomButtonProps } from "./type";
+
 import "./custom-button.css";
 
 export default function CustomButton({
   children,
-  callback,
-}: {
-  children?: ReactNode;
-  callback?: () => void;
-}) {
+  textStyle,
+  ...props
+}: CustomButtonProps) {
   return (
-    <button type="button" onClick={callback} className="button_custom">
-      <CustomText style={{ color: "#fffcee" }}>
+    <button type="button" className="button_custom" {...props}>
+      <CustomText style={{ color: "#fffcee", ...textStyle }}>
         {children ? (
           children
         ) : (

@@ -15,17 +15,33 @@ export default function Skill() {
       <div className="skill_container flex_row">
         <div className="soft_skill flex_column">
           <div className="soft_skill_block flex_row_between">
-            {softSkills.map((sskill) => (
+            {softSkills.map((sskill, index) => (
               <motion.div
                 className="soft_skill_element flex_row"
                 key={sskill.name}
-                initial={{ y: 0, boxShadow: "0 4px 12px rgba(0, 0, 0, 0.25)" }}
+                initial={{
+                  y: 0,
+                  x: -80,
+                  opacity: 0,
+                  boxShadow: "0 4px 14px rgba(0, 0, 0, 0.10)",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
                 whileHover={{
                   y: -4,
-                  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.35)",
-                  transition: { duration: 0.3, ease: "easeInOut" },
+                  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.30)",
+                  transition: {
+                    duration: 0.3,
+                    ease: "easeInOut",
+                  },
                 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+                viewport={{ amount: 0.3 + index / 10, once: true }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                }}
               >
                 <CustomIcon
                   name={sskill.icon.name}
@@ -54,18 +70,30 @@ export default function Skill() {
         </div>
         <div className="hard_tools_container flex_column">
           <div className="hard_skill flex_column">
-            <div className="skills_mapping flex_row_center">
+            <motion.div
+              className="skills_mapping flex_row"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ amount: 0.8, once: true }}
+            >
               {hardSkills.map((hskill) => (
                 <Pils key={hskill}>{hskill}</Pils>
               ))}
-            </div>
+            </motion.div>
           </div>
           <div className="tools_skill flex_column">
-            <div className="skills_mapping flex_row_center">
+            <motion.div
+              className="skills_mapping flex_row"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ amount: 0.8, once: true }}
+            >
               {toolSkills.map((tool) => (
                 <Pils key={tool}>{tool}</Pils>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

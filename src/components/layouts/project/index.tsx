@@ -37,13 +37,19 @@ export default function Project() {
           <motion.div
             className="card_container"
             key={project.id}
-            initial={{ y: 0, boxShadow: "0 4px 12px rgba(0, 0, 0, 0.25)" }}
+            initial={{
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.25)",
+              opacity: 0,
+              y: 40,
+            }}
+            whileInView={{ opacity: 1, y: 0 }}
             whileHover={{
               y: -4,
               boxShadow: "0 8px 20px rgba(0, 0, 0, 0.35)",
               transition: { duration: 0.3, ease: "easeInOut" },
             }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            viewport={{ amount: 0.2, once: true }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
           >
             <div className="link_dev flex_row">
               {project.github ? (
@@ -110,8 +116,8 @@ export default function Project() {
               </motion.button>
             </div>
             <div className="card_pils flex_row">
-              <Pils>{project.format}</Pils>
-              <Pils>{project.type}</Pils>
+              <Pils accent>{project.format}</Pils>
+              <Pils accent>{project.type}</Pils>
             </div>
             <motion.img src={project.image} alt={project.name} />
           </motion.div>

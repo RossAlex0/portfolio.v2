@@ -8,11 +8,12 @@ export default function Hero() {
     <div className="hero section_container">
       <div className="hero_text">
         <CustomText className="hero_title">
-          Passionate <i>developer</i> of web and mobile solutions,
+          Développeur passionné de <br />
+          solutions web et mobile,
         </CustomText>
         <CustomText className="hero_title" style={{ overflow: "hidden" }}>
-          crafted for&nbsp;
-          <WordsRotate words={["you.", "us.", "all."]} />
+          conçues pour&nbsp;
+          <WordsRotate words={["vous.", "nous.", "tous."]} />
         </CustomText>
       </div>
     </div>

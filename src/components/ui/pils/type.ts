@@ -4,4 +4,5 @@ export type PilsProps = {
   children: React.ReactNode;
   containerStyle?: React.CSSProperties;
   textStyle?: React.CSSProperties;
+  accent?: boolean;
 };

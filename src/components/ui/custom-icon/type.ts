@@ -1,31 +1,124 @@
+import {
+  FaCode,
+  FaGithub,
+  FaCss3Alt,
+  FaReact,
+  FaFigma,
+  FaNodeJs,
+  FaDocker,
+  FaAws,
+  FaRetweet,
+  FaHandshake,
+  FaWrench,
+} from "react-icons/fa";
+import {
+  SiGitlab,
+  SiLinkedin,
+  SiWelcometothejungle,
+  SiVercel,
+  SiExpo,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiGraphql,
+  SiSentry,
+  SiApollographql,
+  SiDirectus,
+  SiPostgresql,
+  SiVite,
+  SiOvh,
+  SiGmail,
+} from "react-icons/si";
+import { BiLogoTypescript, BiSearchAlt2 } from "react-icons/bi";
+import {
+  RiYoutubeLine,
+  RiNextjsFill,
+  RiJavascriptFill,
+  RiBugLine,
+} from "react-icons/ri";
+import {
+  TbMail,
+  TbBrandGithub,
+  TbBrandGitlab,
+  TbBrandLinkedin,
+  TbFileCv,
+  TbWorld,
+  TbFileDescription,
+  TbBrandReactNative,
+  TbHeartRateMonitor,
+  TbRocket,
+  TbBulb,
+} from "react-icons/tb";
+
 import { IconBaseProps } from "react-icons";
-import * as FaIcons from "react-icons/fa";
-import * as BiIcons from "react-icons/bi";
-import * as RiIcons from "react-icons/ri";
-import * as SiIcons from "react-icons/si";
-import * as TbIcons from "react-icons/tb";
 
-export const iconPacks = {
-  Fa: FaIcons,
-  Bi: BiIcons,
-  Ri: RiIcons,
-  Si: SiIcons,
-  Tb: TbIcons,
+export type IconName = keyof typeof iconMap;
+
+export type CustomIconProps = IconBaseProps & {
+  name: IconName;
 };
 
-export type IconPackKey = keyof typeof iconPacks;
-
-export type IconNamesByPack = {
-  Fa: keyof typeof FaIcons;
-  Bi: keyof typeof BiIcons;
-  Ri: keyof typeof RiIcons;
-  Si: keyof typeof SiIcons;
-  Tb: keyof typeof TbIcons;
+const iconFa = {
+  FaCode,
+  FaGithub,
+  FaCss3Alt,
+  FaReact,
+  FaFigma,
+  FaNodeJs,
+  FaDocker,
+  FaAws,
+  FaRetweet,
+  FaHandshake,
+  FaWrench,
 };
 
-export type IconName<T extends IconPackKey> = IconNamesByPack[T];
+const iconSi = {
+  SiGitlab,
+  SiLinkedin,
+  SiWelcometothejungle,
+  SiVercel,
+  SiExpo,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiGraphql,
+  SiSentry,
+  SiApollographql,
+  SiDirectus,
+  SiPostgresql,
+  SiVite,
+  SiOvh,
+  SiGmail,
+};
 
-export type CustomIconProps<T extends IconPackKey = "Fa"> = IconBaseProps & {
-  name: IconName<T>; // Le nom de l'icône est lié au pack sélectionné
-  pack?: T; // Le pack d'icônes (par défaut 'Fa')
+const iconBi = {
+  BiLogoTypescript,
+  BiSearchAlt2,
+};
+const iconRi = {
+  RiYoutubeLine,
+  RiNextjsFill,
+  RiJavascriptFill,
+  RiBugLine,
+};
+const iconTb = {
+  TbMail,
+  TbBrandGithub,
+  TbBrandGitlab,
+  TbBrandLinkedin,
+  TbFileCv,
+  TbWorld,
+  TbFileDescription,
+  TbBrandReactNative,
+  TbHeartRateMonitor,
+  TbRocket,
+  TbBulb,
+};
+
+export const iconMap = {
+  ...iconFa,
+  ...iconSi,
+  ...iconBi,
+  ...iconRi,
+  ...iconTb,
 };

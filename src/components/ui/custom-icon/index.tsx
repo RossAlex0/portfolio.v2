@@ -1,22 +1,12 @@
-import { IconBaseProps } from "react-icons";
-import { CustomIconProps, IconPackKey, iconPacks } from "./type";
+import { iconMap, CustomIconProps } from "./type";
 
-export default function CustomIcon<T extends IconPackKey = "Fa">({
+export default function CustomIcon({
   name,
-  pack = "Fa",
   size = 24,
   color = "black",
   ...props
-}: CustomIconProps<T>) {
-  const icons = iconPacks[pack];
-
-  const IconComponent = icons[
-    name as keyof typeof icons
-  ] as React.ComponentType<IconBaseProps>;
-
-  if (!IconComponent) {
-    return <iconPacks.Fa.FaCode size={size} color={color} />;
-  }
+}: CustomIconProps) {
+  const IconComponent = iconMap[name] ?? iconMap.FaCode;
 
   return <IconComponent size={size} color={color} {...props} />;
 }

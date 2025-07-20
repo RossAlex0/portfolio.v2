@@ -1,13 +1,8 @@
-import { IconName, IconPackKey } from "@/components/ui/custom-icon/type";
-
-type Icon<T extends IconPackKey = IconPackKey> = {
-  type: T;
-  name: IconName<T>;
-};
+import { IconName } from "@/components/ui/custom-icon/type";
 
 type Techno = {
   name: string;
-  icon: Icon;
+  icon: IconName;
 };
 
 type Description = {
@@ -44,11 +39,8 @@ export type Project = {
   description: Description;
 };
 
-export type SoftSkills<T extends IconPackKey = IconPackKey> = {
+export type SoftSkills = {
   name: string;
-  icon: {
-    name: IconName<T>;
-    pack: T;
-  };
+  icon: IconName;
   exemple: string;
 };

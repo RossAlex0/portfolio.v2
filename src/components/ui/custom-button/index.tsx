@@ -8,8 +8,14 @@ export default function CustomButton({
   textStyle,
   ...props
 }: CustomButtonProps) {
+  const buttonClass = `button_custom${props.disabled ? "_disabled" : ""}`;
+
   return (
-    <button type="button" className="button_custom" {...props}>
+    <button
+      type="button"
+      {...props}
+      className={`${buttonClass} ${props.className}`}
+    >
       <CustomText style={{ color: "#fffcee", ...textStyle }}>
         {children ? (
           children

@@ -15,7 +15,7 @@
 .timeline-header {
   text-align: center;
   margin-bottom: 80px;
-  background-color: var(--background);
+  background-color: var(--primary-color);
 }
 
 .timeline-title {
@@ -34,11 +34,11 @@
 .timeline-line {
   position: absolute;
   left: 50%;
-  top: 10%;
+  top: 3rem;
   transform: translateX(-1px);
   width: 2px;
   height: 90%;
-  background: var(--dark-background);
+  background: var(--secondary-color);
   z-index: 0;
 }
 
@@ -91,16 +91,16 @@
   position: relative;
   top: 8px;
   z-index: 2;
-  border-color: var(--dark-background);
+  border-color: var(--secondary-color);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-dot.accent {
-  background-color: var(--dark-background);
+  background-color: var(--secondary-color);
 }
 
 .timeline-dot.regular {
-  background-color: var(--background);
+  background-color: var(--primary-color);
 }
 
 @media (max-width: 768px) {

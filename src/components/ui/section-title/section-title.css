@@ -9,5 +9,5 @@
 .section_title_line {
   height: 1px;
   width: 55%;
-  background-color: var(--dark-background);
+  background-color: var(--secondary-color);
 }

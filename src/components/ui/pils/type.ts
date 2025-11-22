@@ -1,8 +1,7 @@
 import React from "react";
 
-export type PilsProps = {
-  children: React.ReactNode;
+export type PilsProps = React.HTMLAttributes<HTMLDivElement> & {
   containerStyle?: React.CSSProperties;
   textStyle?: React.CSSProperties;
-  accent?: boolean;
+  dark?: boolean;
 };

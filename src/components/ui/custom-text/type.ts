@@ -1,7 +1,8 @@
-import React from "react";
+import { ComponentProps } from "react";
+import { motion } from "framer-motion";
 
-export type CustomTextProps = React.HTMLAttributes<HTMLParagraphElement> & {
-  children: React.ReactNode;
-  isTitle?: boolean;
-  className?: string;
-};
+export type MotionParagraphProps = ComponentProps<typeof motion.p>;
+export type MotionHeadingProps = ComponentProps<typeof motion.h2>;
+
+export type CustomTextProps = { isTitle?: boolean } & MotionParagraphProps &
+  MotionHeadingProps;

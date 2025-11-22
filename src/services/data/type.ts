@@ -11,19 +11,18 @@ type Description = {
 };
 
 export enum FormatProject {
-  web = "Web",
-  mobile = "Mobile",
-  tablet = "Tablette",
-  server = "Server",
-  api = "API",
+  WEB = "Web",
+  MOBILE = "Mobile",
+  TABLET = "Tablette",
+  IOS = "IOS",
+  CP = "Cross-Platforme",
+  API = "API",
 }
 export enum TypeProject {
-  Landing = "Landing Page",
-  WebFull = "Application Web full stack",
-  MobileFull = "Application Mobile full stack",
-  MobileIosFull = "Application Ios full stack",
-  Back = "Backend",
-  BackServerless = "Backend Serverless",
+  FRONT = "Front-end",
+  FULL = "Full-stack",
+  BACK = "Back-end",
+  BACKLESS = "Back-end Serverless",
 }
 export type Project = {
   id: number;
@@ -33,9 +32,10 @@ export type Project = {
   link: string | null;
   github: string | null;
   image: string;
+  image_size: { width: number; height: number };
   video: string | null;
-  format: FormatProject;
-  type: TypeProject;
+  format: FormatProject[];
+  type: TypeProject[];
   description: Description;
 };
 

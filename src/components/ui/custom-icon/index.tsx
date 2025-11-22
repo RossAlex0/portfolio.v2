@@ -8,5 +8,5 @@ export default function CustomIcon({
 }: CustomIconProps) {
   const IconComponent = iconMap[name] ?? iconMap.FaCode;
 
-  return <IconComponent size={size} color={color} {...props} />;
+  return <IconComponent {...props} size={size} color={color} />;
 }

@@ -1,20 +1,19 @@
 .about_desc {
   width: 70%;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.5rem;
   margin: auto;
 }
 .strong {
   font-family: var(--font-text-bold);
-  color: var(--text-color);
 }
 
 .about_content {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .link_rs {
   margin: auto;
-  margin-top: 3rem;
+  margin-top: 2rem;
   gap: 1rem;
 }

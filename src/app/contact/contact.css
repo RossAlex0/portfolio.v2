@@ -16,8 +16,8 @@
 .contact_block {
   max-width: 90%;
   max-height: 80%;
-  min-height: 60%;
-  min-width: 40%;
+  min-height: 65%;
+  min-width: 45%;
   background-color: var(--secondary-color);
   border-radius: 32px;
   padding: 2rem;
@@ -48,4 +48,9 @@
   top: 3%;
   transform: translateX(-50%);
   z-index: 0;
+}
+
+.res_api {
+  margin: auto;
+  gap: 0.8rem;
 }

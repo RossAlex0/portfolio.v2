@@ -4,19 +4,19 @@ import { PilsProps } from "./type";
 import "./pils.css";
 
 export default function Pils({
-  children,
   containerStyle,
   textStyle,
-  accent,
+  dark,
+  ...props
 }: PilsProps) {
-  const accentStyleText = accent
+  const accentStyleText = dark
     ? {
         color: "#fffcee",
       }
     : {
         color: "#171717",
       };
-  const accentStyleContainer = accent
+  const accentStyleContainer = dark
     ? {
         backgroundColor: "#0a1117dd",
       }
@@ -26,6 +26,7 @@ export default function Pils({
 
   return (
     <div
+      {...props}
       className="pils_container"
       style={{ ...accentStyleContainer, ...containerStyle }}
     >
@@ -33,7 +34,7 @@ export default function Pils({
         className="pils_content"
         style={{ ...accentStyleText, ...textStyle }}
       >
-        {children}
+        {props.children}
       </CustomText>
     </div>
   );

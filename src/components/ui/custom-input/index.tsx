@@ -2,57 +2,84 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CustomInputProps } from "./type";
 import "./custom-input.css";
+import CustomIcon from "../custom-icon";
 
 export default function CustomInput({
   label,
   inputWidth,
   isTextArea,
+  value,
+  setValue,
   ...props
 }: CustomInputProps) {
   const [isFocused, setIsFocused] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  // const [value, setValue] = React.useState("");
 
-  const topLabelFocus = isTextArea ? "-16px" : "-12px";
-  const isFocusedOrFilled = isFocused || value.length > 0;
+  const topLabelFocus = isTextArea ? "-18px" : "-12px";
 
+  const isFilled = value !== "" && !!value;
+
+  const openInput = (value !== "" && !!value) || isFocused;
+
+  const chevronFocus = React.useCallback(
+    () => (
+      <div className="custom_input_chevron">
+        <CustomIcon name="TbCircle" color="#fffcee" size={8} />
+      </div>
+    ),
+    []
+  );
   return (
     <motion.div
       className="input_container"
       style={inputWidth ? { width: `${inputWidth}` } : undefined}
     >
       {isTextArea ? (
-        <textarea
-          className={`custom_input ${
-            isFocusedOrFilled ? "focus" : "not_focus"
-          }`}
-          style={{ resize: isFocusedOrFilled ? "vertical" : "none" }}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          onChange={(e) => setValue(e.target.value)}
-          value={value}
-          {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
-        />
+        <>
+          <textarea
+            className={`custom_input ${openInput ? "focus" : "not_focus"}`}
+            style={{ resize: isFocused || isFilled ? "vertical" : "none" }}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            onChange={(e) => setValue(e.target.value)}
+            value={value}
+            {...props}
+          />
+          {isFocused ? chevronFocus() : undefined}
+        </>
       ) : (
-        <input
-          className={`custom_input ${
-            isFocusedOrFilled ? "focus" : "not_focus"
-          }`}
-          type="text"
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          onChange={(e) => setValue(e.target.value)}
-          value={value}
-          {...(props as React.InputHTMLAttributes<HTMLInputElement>)}
-        />
+        <>
+          <input
+            className={`custom_input ${openInput ? "focus" : "not_focus"}`}
+            type="text"
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            onChange={(e) => setValue(e.target.value)}
+            value={value}
+            {...props}
+          />{" "}
+          {isFocused ? chevronFocus() : undefined}
+        </>
       )}
 
       <motion.p
         className="input_label"
         initial={{ top: "50%", left: "0.5rem", scale: 1, y: "-50%" }}
         animate={
-          isFocusedOrFilled
-            ? { top: topLabelFocus, left: 0, scale: 0.7, y: 0 }
-            : { top: "50%", left: "0.5rem", scale: 1, y: "-50%" }
+          isFocused || isFilled
+            ? {
+                top: topLabelFocus,
+                left: 0,
+                scale: 0.7,
+                y: 0,
+                color: "#fffcee",
+              }
+            : {
+                top: "50%",
+                left: "0.5rem",
+                scale: 1,
+                y: "-50%",
+              }
         }
         transition={{ type: "tween", duration: 0.4, ease: "easeOut" }}
       >

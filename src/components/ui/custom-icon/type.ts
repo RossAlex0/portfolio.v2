@@ -10,11 +10,12 @@ import {
   FaRetweet,
   FaHandshake,
   FaWrench,
+  FaPiedPiperSquare,
+  FaYoutube,
 } from "react-icons/fa";
 import {
   SiGitlab,
   SiLinkedin,
-  SiWelcometothejungle,
   SiVercel,
   SiExpo,
   SiExpress,
@@ -28,26 +29,23 @@ import {
   SiVite,
   SiOvh,
   SiGmail,
+  SiTypescript,
+  SiJavascript,
 } from "react-icons/si";
-import { BiLogoTypescript, BiSearchAlt2 } from "react-icons/bi";
-import {
-  RiYoutubeLine,
-  RiNextjsFill,
-  RiJavascriptFill,
-  RiBugLine,
-} from "react-icons/ri";
 import {
   TbMail,
+  TbBrain,
   TbBrandGithub,
   TbBrandGitlab,
   TbBrandLinkedin,
   TbFileCv,
   TbWorld,
-  TbFileDescription,
   TbBrandReactNative,
   TbHeartRateMonitor,
   TbRocket,
   TbBulb,
+  TbBug,
+  TbCircle,
 } from "react-icons/tb";
 
 import { IconBaseProps } from "react-icons";
@@ -70,12 +68,15 @@ const iconFa = {
   FaRetweet,
   FaHandshake,
   FaWrench,
+  FaPiedPiperSquare,
+  FaYoutube,
 };
 
 const iconSi = {
   SiGitlab,
   SiLinkedin,
-  SiWelcometothejungle,
+  SiTypescript,
+  SiJavascript,
   SiVercel,
   SiExpo,
   SiExpress,
@@ -91,16 +92,6 @@ const iconSi = {
   SiGmail,
 };
 
-const iconBi = {
-  BiLogoTypescript,
-  BiSearchAlt2,
-};
-const iconRi = {
-  RiYoutubeLine,
-  RiNextjsFill,
-  RiJavascriptFill,
-  RiBugLine,
-};
 const iconTb = {
   TbMail,
   TbBrandGithub,
@@ -108,17 +99,17 @@ const iconTb = {
   TbBrandLinkedin,
   TbFileCv,
   TbWorld,
-  TbFileDescription,
+  TbBrain,
   TbBrandReactNative,
   TbHeartRateMonitor,
   TbRocket,
   TbBulb,
+  TbBug,
+  TbCircle,
 };
 
 export const iconMap = {
   ...iconFa,
   ...iconSi,
-  ...iconBi,
-  ...iconRi,
   ...iconTb,
 };

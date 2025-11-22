@@ -7,18 +7,22 @@ export const projects: Project[] = [
     year: "2025",
     techno: [
       { name: "CSS", icon: "FaCss3Alt" },
-      { name: "TypeScript", icon: "BiLogoTypescript" },
+      { name: "TypeScript", icon: "SiTypescript" },
       { name: "React", icon: "FaReact" },
-      { name: "Next", icon: "RiNextjsFill" },
+      { name: "Next", icon: "FaCode" },
       { name: "Vercel", icon: "SiVercel" },
+      { name: "OVH", icon: "SiOvh" },
       { name: "Figma", icon: "FaFigma" },
+      { name: "Github", icon: "FaGithub" },
     ],
     github: "https://github.com/RossAlex0/LeCercleDesVignerons",
     link: "https://cercle-des-vignerons.vercel.app/",
     image: "/images/cercleDesVignerons.webp",
+    image_size: { width: 640, height: 427 },
+
     video: null,
-    format: FormatProject.web,
-    type: TypeProject.Landing,
+    format: [FormatProject.WEB],
+    type: [TypeProject.FRONT],
     description: {
       fr: "Cercle des Vignerons est un site vitrine développé pour un particulier souhaitant accroître sa visibilité en ligne et bénéficier d’un bon référencement naturel. J’ai conçu une interface moderne avec une attention particulière portée à l’UI et à l’UX. Le site met en avant l’entreprise, ses collaborateurs ainsi que son univers. Une API sur mesure permet de vérifier, traiter et envoyer les messages via un formulaire de contact intégré.",
       en: "Cercle des Vignerons is a showcase website developed for an individual looking to improve online visibility and benefit from solid SEO. I built a modern interface with special attention to UI and UX. The site highlights the business, its team members, and its identity. A custom API handles form submissions, including message verification, processing, and sending.",
@@ -29,7 +33,7 @@ export const projects: Project[] = [
     name: "WildWeather",
     year: "2024",
     techno: [
-      { name: "TypeScript", icon: "BiLogoTypescript" },
+      { name: "TypeScript", icon: "SiTypescript" },
       {
         name: "React-Native",
         icon: "TbBrandReactNative",
@@ -39,13 +43,16 @@ export const projects: Project[] = [
       { name: "ExpressJs", icon: "SiExpress" },
       { name: "MongoDB", icon: "SiMongodb" },
       { name: "Figma", icon: "FaFigma" },
+      { name: "Github", icon: "FaGithub" },
     ],
     github: "https://github.com/RossAlex0/WildWeather_APP",
     link: null,
     image: "/images/wildWeather.webp",
+    image_size: { width: 820, height: 820 },
+
     video: "https://youtube.com/embed/pyyyKSBrlU0",
-    format: FormatProject.mobile,
-    type: TypeProject.MobileFull,
+    format: [FormatProject.MOBILE, FormatProject.CP],
+    type: [TypeProject.FULL],
     description: {
       fr: "Wild Weather est une application mobile cross-platform développée avec React Native. Elle permet aux utilisateurs de personnaliser leur expérience (langue, alertes, villes favorites) et propose des données et prévisions météo précises, ainsi que des prévisions astronomiques appréciées notamment des jardiniers. L’application est connectée à une API REST sécurisée par token et une base de données MongoDB, avec une authentification fiable et une gestion sécurisée des données utilisateurs.",
       en: "Wild Weather is a cross-platform mobile application built with React Native. It allows users to customize their experience (language, alerts, favorite cities) and provides accurate weather data and forecasts, along with astronomical predictions valued by gardeners. The app connects to a secure REST API with token-based authentication and a MongoDB database, ensuring safe and reliable user data management.",
@@ -57,20 +64,23 @@ export const projects: Project[] = [
     year: "2024",
     techno: [
       { name: "CSS", icon: "FaCss3Alt" },
-      { name: "JavaScript", icon: "RiJavascriptFill" },
+      { name: "JavaScript", icon: "SiJavascript" },
       { name: "React", icon: "FaReact" },
       { name: "NodeJs", icon: "FaNodeJs" },
       { name: "ExpressJs", icon: "SiExpress" },
       { name: "MySQL", icon: "SiMysql" },
       { name: "Figma", icon: "FaFigma" },
+      { name: "Github", icon: "FaGithub" },
     ],
     github:
       "https://github.com/WildCodeSchool-2024-02/JS-RemoteFR-CodeOfWar-P3-Street-Art-Hunter",
     link: null,
     image: "/images/streetArtHunter.webp",
+    image_size: { width: 820, height: 547 },
+
     video: "https://youtube.com/embed/XwS-7c9GzNI",
-    format: FormatProject.web,
-    type: TypeProject.WebFull,
+    format: [FormatProject.WEB],
+    type: [TypeProject.FULL],
     description: {
       fr: "Street Art Hunter est un projet réalisé en équipe de 4 personnes dans le cadre de ma formation de développeur. La plateforme est divisée en deux usages : sur web, elle permet la gestion administrative et des comptes utilisateurs ; sur mobile, elle offre une expérience de jeu basée sur la géolocalisation en temps réel. L’objectif est de découvrir des œuvres de street art, gagner des points, progresser dans le classement, dépasser ses amis, suivre sa progression, et même ajouter de nouvelles œuvres, soumises à validation par un administrateur. Le projet repose sur une API REST robuste et une base de données MySQL.",
       en: "Street Art Hunter is a team project developed by four people as part of my developer training. The platform offers two distinct experiences: on web, it focuses on admin and user account management; on mobile, it delivers a game-like experience using real-time geolocation. Players explore the city to find street art, earn points, climb the leaderboard, track their progress, and even submit new artworks for admin validation. The app is built on a robust REST API and a MySQL database.",
@@ -81,7 +91,7 @@ export const projects: Project[] = [
     name: "Hinfact - Training Mangement Systeme",
     year: "2025",
     techno: [
-      { name: "TypeScript", icon: "BiLogoTypescript" },
+      { name: "TypeScript", icon: "SiTypescript" },
       {
         name: "React-Native",
         icon: "TbBrandReactNative",
@@ -96,13 +106,16 @@ export const projects: Project[] = [
       { name: "PostgreSQL", icon: "SiPostgresql" },
       { name: "Docker", icon: "FaDocker" },
       { name: "AWS", icon: "FaAws" },
+      { name: "Gitlab", icon: "SiGitlab" },
     ],
     github: null,
     link: null,
     image: "/images/hinfact.webp",
+    image_size: { width: 820, height: 547 },
+
     video: null,
-    format: FormatProject.tablet,
-    type: TypeProject.MobileIosFull,
+    format: [FormatProject.IOS, FormatProject.TABLET, FormatProject.WEB],
+    type: [TypeProject.FULL],
     description: {
       fr: "Chez Hinfact, j’ai contribué à l’évolution de l’application mobile iOS en React Native, avec un mode online et offline géré via le cache Apollo. J’ai migré le projet vers Expo afin de réduire les frictions techniques et gagner en réactivité face aux besoins métier, avant de rendre l’application compatible Android. J’ai également ajouté de nouvelles fonctionnalités en collaboration fluide avec les équipes produit. Côté backend, j’ai participé à la maintenance et à l’évolution de la base de données via le CMS Directus, avec la mise en place de migrations, de correctifs, et le développement d’extensions sur mesure.",
       en: "At Hinfact, I contributed to the evolution of the iOS mobile app built with React Native, featuring online and offline modes handled through Apollo cache. I migrated the project to Expo to reduce technical friction and improve responsiveness to business needs, then made the app Android-compatible. I also implemented new features in smooth collaboration with the product teams. On the backend, I maintained and enhanced the database via the Directus CMS, implementing migrations, fixes, and custom extension development.",
@@ -114,18 +127,21 @@ export const projects: Project[] = [
     year: "2024",
     techno: [
       { name: "CSS", icon: "FaCss3Alt" },
-      { name: "TypeScript", icon: "BiLogoTypescript" },
+      { name: "TypeScript", icon: "SiTypescript" },
       { name: "React", icon: "FaReact" },
       { name: "Vite", icon: "SiVite" },
       { name: "Vercel", icon: "SiVercel" },
       { name: "OVH", icon: "SiOvh" },
+      { name: "Github", icon: "FaGithub" },
     ],
     github: "https://github.com/RossAlex0/Portfolio_Marlene",
     link: "https://ayraultmarlene.fr",
     image: "/images/marlenePortfolio.webp",
+    image_size: { width: 644, height: 429 },
+
     video: "https://youtube.com/embed/qqqlfxwVqqE",
-    format: FormatProject.web,
-    type: TypeProject.Landing,
+    format: [FormatProject.WEB],
+    type: [TypeProject.FRONT],
     description: {
       fr: "J’ai accompagné Marlène, UI/UX designer, dans la refonte de son portfolio dont la version initiale sous Webflow souffrait de problèmes de performance et de SEO. J’ai reconstruit le site en conservant le design original et en intégrant les améliorations souhaitées. Le site a été développé avec une stack moderne, déployé via Vercel, et optimisé (notamment les images) pour de meilleures performances. J’ai également reconfiguré les DNS pour assurer le bon fonctionnement du nom de domaine.",
       en: "I helped Marlène, a UI/UX designer, rebuild her portfolio after the original Webflow version faced performance and SEO issues. I kept the original design while implementing her requested improvements. The new site was built with a modern tech stack, deployed via Vercel, and optimized for performance — including image optimization. I also reconfigured the DNS to ensure the custom domain worked seamlessly.",
@@ -136,7 +152,7 @@ export const projects: Project[] = [
     name: "BudgetMade",
     year: "2024",
     techno: [
-      { name: "TypeScript", icon: "BiLogoTypescript" },
+      { name: "TypeScript", icon: "SiTypescript" },
       {
         name: "React-Native",
         icon: "TbBrandReactNative",
@@ -146,13 +162,16 @@ export const projects: Project[] = [
       { name: "ExpressJs", icon: "SiExpress" },
       { name: "MySQL", icon: "SiMysql" },
       { name: "Figma", icon: "FaFigma" },
+      { name: "Github", icon: "FaGithub" },
     ],
     github: "https://github.com/RossAlex0/BudgetMade",
     link: null,
     image: "/images/budgetMade.webp",
+    image_size: { width: 820, height: 1230 },
+
     video: "https://www.youtube.com/embed/yH9_UERd5ZE",
-    format: FormatProject.mobile,
-    type: TypeProject.MobileFull,
+    format: [FormatProject.MOBILE, FormatProject.CP],
+    type: [TypeProject.FULL],
     description: {
       fr: "BudgetMade est une application mobile cross-platform que j’ai développée pour mieux suivre et gérer son budget au quotidien. L’utilisateur peut définir des plafonds par catégorie de dépenses, consulter le détail de ses opérations, et visualiser sa situation à l’aide de graphiques clairs et impactants. L’interface a été pensée pour rendre l’analyse budgétaire intuitive et rapide. L’application repose sur une API REST robuste, un système d’authentification sécurisé, et une base de données MySQL.",
       en: "BudgetMade is a cross-platform mobile app I developed to help users track and manage their daily budget. It allows setting spending limits by category, reviewing detailed transactions, and visualizing financial status through clear and engaging charts. The UI was carefully designed to make budget analysis intuitive at a glance. The app relies on a robust REST API, a highly secure authentication system, and a MySQL database.",
@@ -163,95 +182,81 @@ export const projects: Project[] = [
     name: "Mail Server",
     year: "2024",
     techno: [
-      { name: "TypeScript", icon: "BiLogoTypescript" },
+      { name: "TypeScript", icon: "SiTypescript" },
       { name: "NodeJs", icon: "FaNodeJs" },
       { name: "ExpressJs", icon: "SiExpress" },
       { name: "GoogleService", icon: "SiGmail" },
       { name: "Vercel", icon: "SiVercel" },
+      { name: "Github", icon: "FaGithub" },
     ],
     github: "https://github.com/RossAlex0/portfolio_server",
     link: null,
     image: "/images/mailServer.webp",
+    image_size: { width: 620, height: 697 },
+
     video: null,
-    format: FormatProject.api,
-    type: TypeProject.BackServerless,
+    format: [FormatProject.API],
+    type: [TypeProject.BACK],
     description: {
-      fr: "Ce projet backend serverless a été conçu pour gérer l’envoi d’emails via Gmail, à partir d’un formulaire de contact. Il repose sur une architecture sécurisée avec validation stricte des champs, système de tokens pour contrôler l’accès, et un limiteur de requêtes pour éviter les abus. L’ensemble garantit une gestion fiable, performante et sécurisée des soumissions utilisateur.",
-      en: "This serverless backend project handles email sending via Gmail from a contact form. It’s built with a strong focus on security: strict field validation, token-based access control, and request rate limiting to prevent abuse. The setup ensures reliable, high-performance, and secure handling of user submissions.",
+      fr: "Cette API a été créée pour gérer l’envoi d’emails via Gmail SMTP depuis un formulaire de contact, avec un haut niveau de sécurité. Elle intègre une validation stricte des champs, un système de sanitation, une gestion par tokens pour contrôler l’accès, ainsi qu’un limiteur de requêtes pour éviter tout abus. Elle sert aujourd’hui de base fiable, performante et sécurisée pour plusieurs des sites web que j’ai développés.",
+      en: "This API was created to handle email sending through Gmail SMTP from a contact form, with a strong focus on security. It includes strict field validation, input sanitization, token-based access control, and a rate limiter to prevent abuse. It now serves as a reliable, high-performance, and secure foundation for several of the websites I’ve developed.",
     },
   },
   {
     id: 7,
-    name: "RoyalBlue",
+    name: "Pokedex",
     year: "2024",
     techno: [
       { name: "CSS", icon: "FaCss3Alt" },
-      { name: "JavaScript", icon: "RiJavascriptFill" },
+      { name: "JavaScript", icon: "SiJavascript" },
       { name: "React", icon: "FaReact" },
       { name: "NodeJs", icon: "FaNodeJs" },
-      { name: "ExpressJs", icon: "SiExpress" },
-      { name: "MySQL", icon: "SiMysql" },
       { name: "ViteJs", icon: "SiVite" },
       { name: "Figma", icon: "FaFigma" },
+      { name: "LottieFile", icon: "FaPiedPiperSquare" },
+      { name: "Github", icon: "FaGithub" },
     ],
-    github: "https://github.com/RossAlex0/Royal_Blue",
-    link: null,
-    image: "/images/royalBlue.webp",
-    video: "https://youtube.com/embed/XKqZp2TdxZ8",
-    format: FormatProject.web,
-    type: TypeProject.WebFull,
+    github: "https://github.com/RossAlex0/Pokedex",
+    link: "https://pokedex-phi-flax.vercel.app/",
+    image: "/images/pokemon.webp",
+    image_size: { width: 680, height: 453 },
+    video: null,
+    format: [FormatProject.WEB],
+    type: [TypeProject.FRONT],
     description: {
-      fr: "Site web responsive et dynamique intégrant un calendrier interactif pour consulter les disponibilités et réserver des activités ou chambres en temps réel. Le système de réservation est connecté à une base de données MySQL, qui gère également l’authentification sécurisée des utilisateurs.",
-      en: "Responsive and dynamic website featuring an interactive calendar for real-time availability and booking of activities or hotel rooms. The booking system is backed by a MySQL database, which also manages secure user authentication.",
+      fr: "Site web responsive comprenant le webdesign, les wireframes, la maquette, l’intégration d’animations Lottie et l’utilisation de l’API externe Tyradex pour récupérer la liste complète des Pokémon. Un gros travail en CSS a été fait, notamment pour les cartes en 3D. Projet personnel réalisé pour monter en compétences en CSS, JavaScript et React.",
+      en: "Responsive website including web design, wireframes, mockups, Lottie animation integration, and the use of the external Tyradex API to fetch the full list of Pokémon. Significant CSS work was done, especially for the 3D cards. Personal project created to improve skills in CSS, JavaScript, and React.",
     },
   },
-];
-
-export const hardSkills: string[] = [
-  "Css",
-  "TypeScript",
-  "React",
-  "React-Native",
-  "VueJs",
-  "Swift",
-  "Apollo",
-  "NodeJs",
-  "Express",
-  "GraphQl",
-  "APIRest",
-  "Jest",
-  "SQL",
-  "NoSQL",
-  "GitLab",
-  "GitHub",
 ];
 
 export const softSkills: SoftSkills[] = [
   {
     name: "Adaptabilité",
-    exemple: "Switch rapide et efficace entre frontend/backend.",
+    exemple:
+      "Montée en compétence rapide et gestion fluide de plusieurs projets.",
     icon: "FaRetweet",
   },
   {
     name: "Résolution de problèmes",
-    exemple: "Méthodologie pour identifier, isoler et corriger des bugs.",
-    icon: "RiBugLine",
+    exemple:
+      "Analyse efficace des bugs et mise en place de solutions durables.",
+    icon: "TbBug",
   },
   {
     name: "Curiosité",
-    exemple: "Explorer le produit pour un développement plus pertinent.",
-    icon: "BiSearchAlt2",
+    exemple:
+      "Veille active et développe une compréhension approfondie du produit.",
+    icon: "TbBrain",
   },
   {
     name: "Esprit d’équipe",
-    exemple:
-      "Co-conception dev/produit et challenge des features en cours de dev.",
+    exemple: "Communication claire et collaboration active avec l’équipe.",
     icon: "FaHandshake",
   },
   {
     name: "Rigueur",
-    exemple:
-      "Code propre, structuré et maintenable, avec une documentation claire.",
+    exemple: "Code structuré, propre et conforme aux bonnes pratiques.",
     icon: "FaWrench",
   },
   {
@@ -266,27 +271,41 @@ export const softSkills: SoftSkills[] = [
   },
   {
     name: "Prise d'initiative",
-    exemple:
-      "Migration d’une app iOS vers Android pour élargir la base utilisateurs.",
+    exemple: "Propose et initie des améliorations de manière autonome.",
     icon: "TbBulb",
   },
 ];
 
-export const toolSkills: string[] = [
-  "Figma",
-  "NextJs",
+export const hardSkills = [
+  "Css",
+  "TypeScript",
+  "React",
+  "React-Native",
+  "NodeJs",
+  "Express",
+  "GraphQl",
+  "APIRestFull",
   "Directus",
+  "Jest",
+  "PostgreSQL",
+  "MySQL",
   "Docker",
-  "ESLint",
+];
+
+export const toolSkills = [
+  "Figma",
   "Notion",
   "Expo",
-  "Virtual Studio Code",
-  "Xcode",
+  "Apollo Client",
   "Android Studio",
-  "Postman",
+  "Xcode",
+  "Virtual Studio Code",
   "Sentry",
+  "Posthog",
   "Grafana",
   "Vercel",
+  "GitLab",
+  "GitHub",
 ];
 
 export const timelineItems = [
@@ -335,4 +354,4 @@ export const timelineItems = [
       "Equipe de sécurité locale pénitentiaire - escorte & interventions",
     accent: false,
   },
-] as const;
+];

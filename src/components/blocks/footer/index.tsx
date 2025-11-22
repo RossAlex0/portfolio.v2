@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="footer_head_block flex_row">
           <div className="footer_head_infos flex_column">
             <div className="infos_title flex_row">
-              <CustomIcon name="FaCode" pack="Fa" color="#fffcee" size={34} />
+              <CustomIcon name="FaCode" color="#fffcee" className="icons" />
               <CustomText>Full Stack Developer & Mobile Developer</CustomText>
             </div>
             <CustomText className="infos_user">Toulouse, France.</CustomText>
@@ -42,48 +42,21 @@ export default function Footer() {
                 href="https://github.com/RossAlex0"
                 target="_blank"
               >
-                <CustomIcon
-                  name="FaGithub"
-                  pack="Fa"
-                  size={28}
-                  color="#fffcee"
-                />
+                <CustomIcon name="FaGithub" size={28} color="#fffcee" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.2 }}
                 href="https://gitlab.com/alex.rossignol"
                 target="_blank"
               >
-                <CustomIcon
-                  name="SiGitlab"
-                  pack="Si"
-                  size={28}
-                  color="#fffcee"
-                />
+                <CustomIcon name="SiGitlab" size={28} color="#fffcee" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.2 }}
                 href="https://linkedin.com/in/rossignolalex"
                 target="_blank"
               >
-                <CustomIcon
-                  name="SiLinkedin"
-                  pack="Si"
-                  size={28}
-                  color="#fffcee"
-                />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="https://www.welcometothejungle.com/fr"
-                target="_blank"
-              >
-                <CustomIcon
-                  name="SiWelcometothejungle"
-                  pack="Si"
-                  size={28}
-                  color="#fffcee"
-                />
+                <CustomIcon name="SiLinkedin" size={28} color="#fffcee" />
               </motion.a>
               <motion.button
                 whileHover={{ scale: 1.2 }}
@@ -94,7 +67,7 @@ export default function Footer() {
                 }}
                 onClick={() => router.push("/contact")}
               >
-                <CustomIcon name="TbMail" pack="Tb" size={28} color="#fffcee" />
+                <CustomIcon name="TbMail" size={28} color="#fffcee" />
               </motion.button>
             </div>
           </div>

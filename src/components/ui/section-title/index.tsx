@@ -1,17 +1,14 @@
 import CustomText from "../custom-text";
+import { SectionTitleProps } from "./type";
+
 import "./section-title.css";
 
 export default function SectionTitle({
-  children,
   containerStyle = {},
   textStyle = {},
   color,
-}: {
-  children: React.ReactNode;
-  containerStyle?: React.CSSProperties;
-  textStyle?: React.CSSProperties;
-  color?: string;
-}) {
+  ...props
+}: SectionTitleProps) {
   return (
     <div
       className="section_title_container flex_row_center_center"
@@ -22,14 +19,13 @@ export default function SectionTitle({
         style={color ? { backgroundColor: `${color}` } : {}}
       />
       <CustomText
+        {...props}
         style={{
           ...textStyle,
           ...(color ? { color } : {}),
         }}
         isTitle
-      >
-        {children}
-      </CustomText>
+      />
       <span
         className="section_title_line"
         style={color ? { backgroundColor: `${color}` } : {}}

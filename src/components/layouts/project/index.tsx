@@ -8,14 +8,14 @@ import { motion } from "framer-motion";
 import Pils from "@/components/ui/pils";
 import CustomIcon from "@/components/ui/custom-icon";
 import type { Project } from "@/services/data/type";
+import { useRouter } from "next/navigation";
 
 import "./project.css";
-import ProjectModal from "@/components/blocks/project-description-modal";
+import Image from "next/image";
 
 export default function Project() {
-  const [selectedProject, setSelectedProject] = React.useState<Project | null>(
-    null
-  );
+  const router = useRouter();
+
   const breakpointColumnsObj = {
     default: 3,
     1100: 2,
@@ -51,84 +51,37 @@ export default function Project() {
             viewport={{ amount: 0.2, once: true }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            <div className="link_dev flex_row">
-              {project.github ? (
-                <motion.a
-                  href={project.github}
-                  target="_blank"
-                  className="round_link"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  <CustomIcon
-                    name="TbBrandGithub"
-                    pack="Tb"
-                    color="#fffcee"
-                    size={20}
-                  />
-                </motion.a>
-              ) : undefined}
-              {project.video ? (
-                <motion.a
-                  href={project.video}
-                  target="_blank"
-                  className="round_link"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  <CustomIcon
-                    name="RiYoutubeLine"
-                    pack="Ri"
-                    color="#fffcee"
-                    size={20}
-                  />
-                </motion.a>
-              ) : undefined}
-              {project.link ? (
-                <motion.a
-                  href={project.link}
-                  target="_blank"
-                  className="round_link"
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.8 }}
-                >
-                  <CustomIcon
-                    name="TbWorld"
-                    pack="Tb"
-                    color="#fffcee"
-                    size={20}
-                  />
-                </motion.a>
-              ) : undefined}
-
-              <motion.button
-                onClick={() => setSelectedProject(project)}
-                className="round_link"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-              >
-                <CustomIcon
-                  name="TbFileDescription"
-                  pack="Tb"
-                  color="#fffcee"
-                  size={20}
-                />
-              </motion.button>
+            <div className="header_pils flex_row">
+              <Pils dark>{project.name}</Pils>
             </div>
-            <div className="card_pils flex_row">
-              <Pils accent>{project.format}</Pils>
-              <Pils accent>{project.type}</Pils>
+            <div className="bottom_pils flex_row">
+              {project.techno.slice(0, 6).map((tech) => (
+                <Pils
+                  dark
+                  containerStyle={{
+                    paddingTop: "0.5rem",
+                    paddingBottom: "0.3rem",
+                    paddingInline: "0.6rem",
+                  }}
+                  key={tech.name}
+                >
+                  <CustomIcon name={tech.icon} color="#fffcee" size={20} />
+                </Pils>
+              ))}
             </div>
-            <motion.img src={project.image} alt={project.name} />
+            <Image
+              src={project.image}
+              alt={project.name}
+              width={project.image_size.width}
+              height={project.image_size.height}
+              style={{
+                cursor: "pointer",
+              }}
+              onClick={() => router.push(`/project/${project.id}`)}
+            />
           </motion.div>
         ))}
       </Masonry>
-      {selectedProject ? (
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
-      ) : undefined}
     </section>
   );
 }

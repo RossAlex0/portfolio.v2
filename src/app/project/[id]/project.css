@@ -1,10 +1,10 @@
-.contact_container {
-  height: 100lvh;
-  width: 100lvw;
+.project_screen_container {
+  height: 100dvh;
+  width: 100%;
   position: relative;
 }
 
-.contact_back_button {
+.project_button {
   position: absolute;
   width: fit-content;
   top: 5%;
@@ -13,26 +13,44 @@
   z-index: 1;
 }
 
-.contact_block {
-  max-width: 90%;
-  max-height: 80%;
-  min-height: 60%;
-  min-width: 40%;
+.project_modal {
+  height: auto;
+  width: 90%;
+  max-width: 900px;
   background-color: var(--secondary-color);
-  border-radius: 32px;
-  padding: 2rem;
-  gap: 3rem;
+  margin: auto;
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
-.contact_button {
+.project_modal_header_icon {
+  display: flex;
+  gap: 1rem;
+}
+
+.project_modal_separator {
+  height: 1px;
   width: 100%;
-  margin-top: 6rem;
-  justify-content: center;
-  gap: 10%;
+  opacity: 0.8;
+  background-color: var(--primary-color);
+  margin-block: 1rem;
 }
 
-.contact_text_background {
+.project_modal_techno_image {
+  gap: 15%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.project_modal_techno {
+  align-content: start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.project_text_background {
   position: absolute;
   font-size: 7rem;
   font-family: var(--font-text-bold);
@@ -45,7 +63,6 @@
   user-select: none;
   pointer-events: none;
   left: 50%;
-  top: 3%;
   transform: translateX(-50%);
   z-index: 0;
 }

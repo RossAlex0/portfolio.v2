@@ -31,7 +31,7 @@
   margin-top: -1rem;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 0.5px solid var(--dark-background);
+  border-bottom: 0.5px solid var(--secondary-color);
 }
 
 .tools_skill {

@@ -30,7 +30,7 @@ export default function Timeline() {
                     display: "inline-block",
                     marginBottom: "10px",
                   }}
-                  accent={item.accent}
+                  dark={item.accent}
                 >
                   {item.year}
                 </Pils>

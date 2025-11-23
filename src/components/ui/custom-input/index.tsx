@@ -13,7 +13,6 @@ export default function CustomInput({
   ...props
 }: CustomInputProps) {
   const [isFocused, setIsFocused] = React.useState(false);
-  // const [value, setValue] = React.useState("");
 
   const topLabelFocus = isTextArea ? "-18px" : "-12px";
 
@@ -21,7 +20,7 @@ export default function CustomInput({
 
   const openInput = (value !== "" && !!value) || isFocused;
 
-  const chevronFocus = React.useCallback(
+  const focusCircle = React.useCallback(
     () => (
       <div className="custom_input_chevron">
         <CustomIcon name="TbCircle" color="#fffcee" size={8} />
@@ -37,6 +36,7 @@ export default function CustomInput({
       {isTextArea ? (
         <>
           <textarea
+            id={label}
             className={`custom_input ${openInput ? "focus" : "not_focus"}`}
             style={{ resize: isFocused || isFilled ? "vertical" : "none" }}
             onFocus={() => setIsFocused(true)}
@@ -45,11 +45,12 @@ export default function CustomInput({
             value={value}
             {...props}
           />
-          {isFocused ? chevronFocus() : undefined}
+          {isFocused ? focusCircle() : undefined}
         </>
       ) : (
         <>
           <input
+            id={label}
             className={`custom_input ${openInput ? "focus" : "not_focus"}`}
             type="text"
             onFocus={() => setIsFocused(true)}
@@ -58,11 +59,12 @@ export default function CustomInput({
             value={value}
             {...props}
           />{" "}
-          {isFocused ? chevronFocus() : undefined}
+          {isFocused ? focusCircle() : undefined}
         </>
       )}
 
-      <motion.p
+      <motion.label
+        htmlFor={label}
         className="input_label"
         initial={{ top: "50%", left: "0.5rem", scale: 1, y: "-50%" }}
         animate={
@@ -84,7 +86,7 @@ export default function CustomInput({
         transition={{ type: "tween", duration: 0.4, ease: "easeOut" }}
       >
         {label}
-      </motion.p>
+      </motion.label>
     </motion.div>
   );
 }

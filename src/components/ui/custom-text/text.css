@@ -1,6 +1,7 @@
 .custom_text {
   color: var(--secondary-color);
   font-family: var(--font-text-regular);
+  white-space: pre-line;
 }
 .custom_title {
   color: var(--secondary-color);

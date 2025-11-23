@@ -12,6 +12,7 @@ import {
   FaWrench,
   FaPiedPiperSquare,
   FaYoutube,
+  FaGoogleDrive,
 } from "react-icons/fa";
 import {
   SiGitlab,
@@ -31,6 +32,7 @@ import {
   SiGmail,
   SiTypescript,
   SiJavascript,
+  SiNextdotjs,
 } from "react-icons/si";
 import {
   TbMail,
@@ -70,6 +72,7 @@ const iconFa = {
   FaWrench,
   FaPiedPiperSquare,
   FaYoutube,
+  FaGoogleDrive,
 };
 
 const iconSi = {
@@ -90,6 +93,7 @@ const iconSi = {
   SiVite,
   SiOvh,
   SiGmail,
+  SiNextdotjs,
 };
 
 const iconTb = {

@@ -83,10 +83,9 @@ export default function Contact() {
       </CustomText>
       <motion.div
         className="contact_block flex_column"
-        initial={{ opacity: 0, y: 40, scale: 0.8 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ amount: 0, once: true }}
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
       >
         {resAppi === null ? (
           <>

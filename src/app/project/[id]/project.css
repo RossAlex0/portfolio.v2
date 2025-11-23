@@ -66,3 +66,17 @@
   transform: translateX(-50%);
   z-index: 0;
 }
+
+.project_text_color {
+  /* !important add because when connection are very slow the text is dark color, i don't know why.. */
+  color: var(--primary-color) !important;
+}
+
+.project_text_bold {
+  font-family: var(--font-text-bold);
+}
+
+.project_text_description {
+  line-height: 1.4rem;
+  font-size: 1.1rem;
+}

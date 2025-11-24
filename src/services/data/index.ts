@@ -270,37 +270,33 @@ export const softSkills: SoftSkills[] = [
     icon: "TbBulb",
   },
 ];
-
 export const hardSkills = [
   "Css",
+  "Javascript",
   "TypeScript",
   "React",
   "React-Native",
+  "SwiftUI",
   "NodeJs",
   "Express",
-  "GraphQl",
-  "APIRestFull",
-  "Directus",
-  "Jest",
+  "MongoDb",
   "PostgreSQL",
   "MySQL",
   "Docker",
 ];
 
 export const toolSkills = [
-  "Figma",
-  "Notion",
-  "Expo",
-  "Apollo Client",
-  "Android Studio",
-  "Xcode",
-  "Virtual Studio Code",
+  "Jest",
+  "GraphQl",
+  "ApiRest",
+  "Directus",
   "Sentry",
   "Posthog",
   "Grafana",
-  "Vercel",
   "GitLab",
   "GitHub",
+  "Figma",
+  "Expo",
 ];
 
 export const timelineItems = [
@@ -313,7 +309,7 @@ export const timelineItems = [
   {
     year: "2025",
     title: "Projet Cercle Des Vignerons",
-    description: "Développeur Front-End & Design",
+    description: "Développeur Full-Stack & Product Designer",
     accent: false,
   },
   {

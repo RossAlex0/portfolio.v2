@@ -48,6 +48,7 @@ export default function ProjectPage() {
                 whileHover={{ scale: 1.2 }}
                 href={project.github}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <CustomIcon name="FaGithub" size={28} color="#fffcee" />
               </motion.a>
@@ -56,6 +57,7 @@ export default function ProjectPage() {
               <motion.a
                 href={project.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2 }}
               >
                 <CustomIcon name="TbWorld" color="#fffcee" size={28} />
@@ -65,6 +67,7 @@ export default function ProjectPage() {
               <motion.a
                 href={project.video}
                 target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2 }}
               >
                 <CustomIcon name="FaYoutube" color="#fffcee" size={28} />

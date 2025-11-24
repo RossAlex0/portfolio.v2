@@ -41,6 +41,7 @@ export default function Hero() {
           viewport={{ amount: 1, once: true }}
           href="https://linkedin.com/in/rossignolalex"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <CustomIcon name="TbBrandLinkedin" size={46} color="#000000" />
         </motion.a>
@@ -65,7 +66,9 @@ export default function Hero() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9 }}
           viewport={{ amount: 1, once: true }}
-          href=""
+          href="/meta/alex-rossignol-cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <CustomIcon name="TbFileCv" size={46} />
         </motion.a>

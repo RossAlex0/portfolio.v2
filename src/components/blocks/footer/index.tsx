@@ -41,6 +41,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.2 }}
                 href="https://github.com/RossAlex0"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <CustomIcon name="FaGithub" size={28} color="#fffcee" />
               </motion.a>
@@ -48,6 +49,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.2 }}
                 href="https://gitlab.com/alex.rossignol"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <CustomIcon name="SiGitlab" size={28} color="#fffcee" />
               </motion.a>
@@ -55,6 +57,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.2 }}
                 href="https://linkedin.com/in/rossignolalex"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <CustomIcon name="SiLinkedin" size={28} color="#fffcee" />
               </motion.a>

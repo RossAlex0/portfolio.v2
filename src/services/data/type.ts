@@ -7,7 +7,7 @@ type Techno = {
 
 type Description = {
   fr: string;
-  en: string;
+  en: string | null;
 };
 
 export enum FormatProject {

@@ -15,9 +15,9 @@
 }
 
 .card_container {
-  min-height: 300;
-  min-width: 200;
-  background-color: #1f1f1f;
+  min-height: 250px;
+  min-width: 200px;
+  background: #1f1f1f;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 24px;

@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import "./about.css";
 
 export default function About() {
+  const strong = (word: string) => <span className="strong">{word}</span>;
   return (
     <section className="section_container flex_column_center" id="about">
       <SectionTitle>À Propos</SectionTitle>
@@ -18,8 +19,15 @@ export default function About() {
           transition={{ duration: 0.3 }}
           viewport={{ amount: 0.1, once: true }}
         >
-          Faire <span className="strong">mieux</span> qu&apos;hier, pour que
-          demain me <span className="strong">dépasse</span>!
+          J’aime {strong("comprendre")} comment les choses fonctionnent, alors
+          je creuse pour en éclaircir chaque bout de ficelle. Mes années dans
+          les équipes de sécurité pénitentiaire m’ont donné une{" "}
+          {strong("rigueur")} et une {strong("gestion")} du stresse à toute
+          épreuve, et le handball m’a appris la discipline, la{" "}
+          {strong("communication")} et un esprit {strong("d’équipe")} affûté.
+          Aujourd’hui, ces principes nourrissent ma façon de concevoir,{" "}
+          {strong("coder")} et même débugger, avec l’envie simple de devenir{" "}
+          {strong("meilleur")} chaque jour.
         </CustomText>
       </div>
       <div className="about_content flex_column">
@@ -32,6 +40,7 @@ export default function About() {
             viewport={{ amount: 1, once: true }}
             href="https://github.com/RossAlex0"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <CustomIcon name="TbBrandGithub" size={36} />
           </motion.a>
@@ -43,6 +52,7 @@ export default function About() {
             viewport={{ amount: 1, once: true }}
             href="https://gitlab.com/alex.rossignol"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <CustomIcon name="TbBrandGitlab" size={36} />
           </motion.a>
@@ -54,6 +64,7 @@ export default function About() {
             viewport={{ amount: 1, once: true }}
             href="https://linkedin.com/in/rossignolalex"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <CustomIcon name="TbBrandLinkedin" size={36} />
           </motion.a>
@@ -63,7 +74,9 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ amount: 1, once: true }}
-            href=""
+            href="/meta/alex-rossignol-cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <CustomIcon name="TbFileCv" size={36} />
           </motion.a>

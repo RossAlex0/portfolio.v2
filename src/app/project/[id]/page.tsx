@@ -1,16 +1,15 @@
 "use client";
 
-import React from "react";
 import { projects } from "@/services/data";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useRouter, notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import CustomText from "@/components/ui/custom-text";
-
-import "./project.css";
 import CustomIcon from "@/components/ui/custom-icon";
 import Image from "next/image";
 import Pils from "@/components/ui/pils";
 import CustomButton from "@/components/ui/custom-button";
+
+import "./project.css";
 
 export default function ProjectPage() {
   const { id: urlProjectId } = useParams();
@@ -21,10 +20,10 @@ export default function ProjectPage() {
   );
 
   if (!project) {
-    // TODO return _not_found
-    console.info(`Issue: Project not found with ${urlProjectId}`);
-    return;
+    console.warn(`Issue: Project not found with ${urlProjectId} id`);
+    notFound();
   }
+
   return (
     <section className="project_screen_container flex_column">
       <CustomButton className="project_button" onClick={router.back}>
@@ -35,12 +34,8 @@ export default function ProjectPage() {
       </CustomText>
       <motion.div
         className="project_modal"
-        initial={{
-          opacity: 0,
-          y: 90,
-        }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0 }}
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
       >
         <div className="project_modal_header flex_row_between_center">
@@ -53,6 +48,7 @@ export default function ProjectPage() {
                 whileHover={{ scale: 1.2 }}
                 href={project.github}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <CustomIcon name="FaGithub" size={28} color="#fffcee" />
               </motion.a>
@@ -61,6 +57,7 @@ export default function ProjectPage() {
               <motion.a
                 href={project.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2 }}
               >
                 <CustomIcon name="TbWorld" color="#fffcee" size={28} />
@@ -70,6 +67,7 @@ export default function ProjectPage() {
               <motion.a
                 href={project.video}
                 target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2 }}
               >
                 <CustomIcon name="FaYoutube" color="#fffcee" size={28} />
@@ -109,7 +107,10 @@ export default function ProjectPage() {
             ))}
           </div>
         </div>
-        <CustomText style={{ color: "#fffcee", marginBottom: "2rem" }}>
+        <CustomText
+          className="project_text_color project_text_bold"
+          style={{ marginBottom: "2rem" }}
+        >
           {project.year} /{" "}
           {project.format.map((f, i) => {
             if (project.format.length === i + 1) return f;
@@ -123,7 +124,7 @@ export default function ProjectPage() {
             return `${t} - `;
           })}
         </CustomText>
-        <CustomText style={{ color: "#fffcee" }}>
+        <CustomText className="project_text_color project_text_description">
           {project.description.fr}
         </CustomText>
       </motion.div>

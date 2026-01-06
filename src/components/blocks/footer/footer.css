@@ -35,9 +35,9 @@
 }
 
 .infos_user {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   opacity: 0.5;
-  font-family: var(--font-text-light);
+  font-family: var(--font-text-light) !important;
 }
 .infos_user a {
   text-decoration: none;

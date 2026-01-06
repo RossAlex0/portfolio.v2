@@ -48,6 +48,8 @@ import {
   TbBulb,
   TbBug,
   TbCircle,
+  TbChevronDown,
+  TbChevronUp,
 } from "react-icons/tb";
 
 import { IconBaseProps } from "react-icons";
@@ -110,6 +112,8 @@ const iconTb = {
   TbBulb,
   TbBug,
   TbCircle,
+  TbChevronDown,
+  TbChevronUp,
 };
 
 export const iconMap = {

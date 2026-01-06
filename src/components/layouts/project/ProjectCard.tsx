@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { type Project } from "@/services/data/type";
 
-type Props = {
+type ProjectCardProps = {
   project: Project;
   index?: number;
   compact?: boolean;
@@ -16,11 +16,12 @@ type Props = {
 export default function ProjectCard({
   project,
   index = 0,
-  compact = false,
-}: Props) {
+  compact,
+}: ProjectCardProps) {
   const techs = project.techno.slice(0, 7);
 
   const hoverDuration = compact ? 0.3 + index / 10 : 0.3;
+
   const transitionDuration = compact ? 0.6 + index / 10 : 0.6;
 
   return (

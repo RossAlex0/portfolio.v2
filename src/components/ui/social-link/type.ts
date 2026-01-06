@@ -5,4 +5,6 @@ export type SocialLinkProps = {
   iconName: IconName;
   delay: number;
   label: string;
+  size?: number;
+  target?: "_blank" | "_self";
 };

@@ -71,7 +71,7 @@ export default function Contact() {
         router.back();
       }, 2500);
     }
-  }, [isDisabled]);
+  }, [isDisabled, router, sendMail]);
 
   return (
     <section className="contact_container flex_row_center_center">

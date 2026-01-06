@@ -21,6 +21,6 @@ export default function usePostMail() {
           return false;
         });
     },
-    []
+    [URL_API_KEY, URL_SERVER]
   );
 }

@@ -90,8 +90,8 @@ export const metadata: Metadata = {
   creator: "Rossignol Alex",
   category: "software engineer",
   other: {
-    legal: `https://www.alex-rossignol.fr/confidentialite`,
-    privacyPolicy: `https://www.alex-rossignol.fr/policy`,
+    legal: "https://www.alex-rossignol.fr/confidentialite",
+    privacyPolicy: "https://www.alex-rossignol.fr/policy",
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@graph": [

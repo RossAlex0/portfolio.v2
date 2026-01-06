@@ -17,7 +17,7 @@ export default function usePostMail() {
       })
         .then((res) => res.json())
         .catch((err) => {
-          console.info(err);
+          console.error(err);
           return false;
         });
     },

@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import CustomText from "@/components/ui/custom-text";
 import { timelineItems } from "@/services/data";
+import Pils from "@/components/ui/pils";
 
 import "./timeline.css";
-import Pils from "@/components/ui/pils";
 
 export default function Timeline() {
   return (
     <section className="timeline-section">
       <div className="timeline-container">
-        <div className="timeline-line"></div>
+        <div className="timeline-line" />
         <div className="timeline-items">
           {timelineItems.map((item, index) => (
             <motion.div
@@ -43,7 +43,7 @@ export default function Timeline() {
               </div>
               <div
                 className={`timeline-dot ${item.accent ? "accent" : "regular"}`}
-              ></div>
+              />
             </motion.div>
           ))}
         </div>

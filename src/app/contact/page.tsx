@@ -34,7 +34,26 @@ export default function Contact() {
     },
   } as const;
 
-  const isDisabled = Object.values(formContact).every((v) => v === "");
+  const isDisabled = React.useMemo(() => {
+    if (
+      !formContact.name ||
+      !formContact.email ||
+      !formContact.subject ||
+      !formContact.message
+    ) {
+      return true;
+    }
+
+    if (formContact.email.length < 6 || !formContact.email.includes("@")) {
+      return true;
+    }
+
+    if (formContact.subject.length > 80) {
+      return true;
+    }
+
+    return false;
+  }, [formContact]);
 
   const responseApiComponent = React.useCallback(
     () => (
@@ -58,11 +77,15 @@ export default function Contact() {
     [resAppi]
   );
 
-  const handleClickSendButton = React.useCallback(() => {
+  const handleClickSendButton = () => {
     if (!isDisabled) {
       sendMail(formContact)
         .then((e) => {
-          setResApi(!!e);
+          if ("error" in e) {
+            setResApi(false);
+          } else {
+            setResApi(!!e);
+          }
         })
         .catch(() => setResApi(false));
 
@@ -71,7 +94,7 @@ export default function Contact() {
         router.back();
       }, 3500);
     }
-  }, [isDisabled, router, sendMail]);
+  };
 
   return (
     <section className="contact_container flex_row_center_center">

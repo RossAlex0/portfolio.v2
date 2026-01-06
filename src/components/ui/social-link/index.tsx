@@ -9,11 +9,13 @@ export default function SocialLink({
   iconName,
   delay,
   label,
+  size = 36,
+  target = "_blank",
 }: SocialLinkProps) {
   return (
     <motion.a
       href={href}
-      target="_blank"
+      target={target}
       rel="noopener noreferrer"
       aria-label={label}
       whileHover={{ scale: 1.2 }}
@@ -22,7 +24,7 @@ export default function SocialLink({
       transition={{ duration: 0.2 * (delay + 1) }}
       viewport={{ amount: 1, once: true }}
     >
-      <CustomIcon name={iconName} size={36} />
+      <CustomIcon name={iconName} size={size} />
     </motion.a>
   );
 }

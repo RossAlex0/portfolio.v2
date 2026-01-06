@@ -1,23 +1,43 @@
 import WordsRotate from "@/components/ui/words-rotate";
 import CustomText from "@/components/ui/custom-text";
 import { motion } from "framer-motion";
-import CustomIcon from "@/components/ui/custom-icon";
-import { useRouter } from "next/navigation";
+import SocialLink from "@/components/ui/social-link";
 
 import "./hero.css";
 
-const onceText = true;
-
 export default function Hero() {
-  const router = useRouter();
+  const socialLinks = [
+    {
+      href: "https://linkedin.com/in/rossignolalex",
+      iconName: "TbBrandLinkedin",
+      label: "LinkedIn",
+      size: 46,
+      target: undefined,
+    },
+    {
+      href: "/contact",
+      iconName: "TbMail",
+      label: "Contact",
+      size: 46,
+      target: "_self",
+    },
+    {
+      href: "/meta/alex-rossignol-cv.pdf",
+      iconName: "TbFileCv",
+      label: "CV PDF",
+      size: 46,
+      target: undefined,
+    },
+  ] as const;
+
   return (
-    <div className="hero section_container">
+    <section className="hero section_container">
       <motion.div
         className="hero_text"
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        viewport={{ amount: 0, once: onceText }}
+        viewport={{ amount: 0, once: true }}
       >
         <CustomText className="hero_title" isTitle>
           Développeur passionné de <br />
@@ -33,46 +53,18 @@ export default function Hero() {
         </CustomText>
       </motion.div>
       <div className="hero_link flex_row_center_center">
-        <motion.a
-          whileHover={{ scale: 1.2 }}
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ amount: 1, once: true }}
-          href="https://linkedin.com/in/rossignolalex"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <CustomIcon name="TbBrandLinkedin" size={46} color="#000000" />
-        </motion.a>
-        <motion.button
-          whileHover={{ scale: 1.2 }}
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ amount: 1, once: true }}
-          style={{
-            border: "none",
-            background: "none",
-            cursor: "pointer",
-          }}
-          onClick={() => router.push("/contact")}
-        >
-          <CustomIcon name="TbMail" size={46} color="#000000" />
-        </motion.button>
-        <motion.a
-          whileHover={{ scale: 1.2 }}
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9 }}
-          viewport={{ amount: 1, once: true }}
-          href="/meta/alex-rossignol-cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <CustomIcon name="TbFileCv" size={46} />
-        </motion.a>
+        {socialLinks.map((link, index) => (
+          <SocialLink
+            key={link.href}
+            href={link.href}
+            iconName={link.iconName}
+            label={link.label}
+            delay={index}
+            size={link.size}
+            target={link.target}
+          />
+        ))}
       </div>
-    </div>
+    </section>
   );
 }

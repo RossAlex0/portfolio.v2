@@ -149,7 +149,7 @@ export const projects: Project[] = [
     format: [FormatProject.IOS, FormatProject.TABLET, FormatProject.WEB],
     type: [TypeProject.FULL],
     description: {
-      fr: "J’ai commencé chez Hinfact en stage après l'obtention de mon diplôme DWWM et nous avons ensuite poursuivi l’aventure ensemble. Hinfact est un outil de gestion de formation pour compagnies aériennes et centres de formation, orienté EBT et CBTA pour évaluer efficacement les compétences du personnel navigant et des pilotes.\nJ’ai contribué aux applications iOS (React Native + Expo) avec GraphQL et cache Apollo, et côté backend (Directus/Node/Docker/PostgreSQL), grâce à mon adaptabilité je pouvais rapidement switcher entre front et back-end, j'ai effectué refactorings, ajouté des fonctionnalités, créé des extensions et schedulers, géré migrations et permissions, tout en investiguant et résolvant des bugs.\n\nUne expérience qui me permets de progresser chaque jour et de contribuer concrètement à un produit stratégique.",
+      fr: "J’ai commencé chez Hinfact en stage après l'obtention de mon diplôme DWWM et nous avons ensuite poursuivi l’aventure ensemble. Hinfact est un outil de gestion de formation pour compagnies aériennes et centres de formation, orienté EBT et CBTA pour évaluer efficacement les compétences du personnel navigant et des pilotes.\nJ’ai contribué aux applications iOS (React Native + Expo) avec GraphQL et cache Apollo, et côté backend (Directus/Node/Docker/PostgreSQL), grâce à mon adaptabilité je pouvais rapidement switcher entre front et back-end pour concevoir des features dans leurs intégralités.\n\nUne expérience qui me permets de progresser chaque jour et de contribuer concrètement à un produit stratégique.",
       en: null,
     },
     style: StyleProject.PRO,
@@ -317,13 +317,25 @@ export const timelineItems = [
   {
     year: "2025",
     title: "Hinfact",
-    description: "Développeur Full-Stack",
+    description: "Alternance - Développeur web & mobile Full-Stack",
     accent: true,
   },
   {
     year: "2025",
+    title: "Concepteur et développeur d'applications",
+    description: "O'Clock - Alternance - titre RNCP niveau 6",
+    accent: true,
+  },
+  {
+    year: "2025",
+    title: "Hinfact",
+    description: "Stage - Développeur web & mobile Full-Stack",
+    accent: false,
+  },
+  {
+    year: "2025",
     title: "Projet Cercle Des Vignerons",
-    description: "Développeur Full-Stack & Product Designer",
+    description: "Développeur web Full-Stack & Product Designer",
     accent: false,
   },
   {
@@ -341,8 +353,8 @@ export const timelineItems = [
   },
   {
     year: "2024",
-    title: "Formation développeur web et web mobile",
-    description: "WildCodeSchool - Passage du titre de développeur web",
+    title: "Développeur web et web mobile",
+    description: "WildCodeSchool - Bootcamp - titre RNCP niveau 5",
     accent: false,
   },
   {

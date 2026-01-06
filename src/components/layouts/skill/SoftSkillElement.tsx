@@ -9,7 +9,7 @@ import { SoftSkillElementProps } from "./type";
 export default function SoftSkillElement({
   name,
   icon,
-  exemple,
+  description,
   index,
 }: SoftSkillElementProps) {
   return (
@@ -40,20 +40,10 @@ export default function SoftSkillElement({
       }}
     >
       <CustomIcon name={icon} size={26} />
-      <div style={{ width: "88%" }}>
-        <CustomText style={{ fontSize: "16px", fontWeight: "bold" }}>
-          {name}
-        </CustomText>
-        <CustomText
-          style={{
-            fontSize: "10px",
-            opacity: 0.7,
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-        >
-          {exemple}
+      <div className="soft_skill_element_container">
+        <CustomText className="soft_skill_element_title">{name}</CustomText>
+        <CustomText className="soft_skill_element_description">
+          {description}
         </CustomText>
       </div>
     </motion.div>

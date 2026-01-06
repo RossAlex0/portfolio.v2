@@ -17,7 +17,7 @@ export default function Skill() {
                 key={skill.name}
                 name={skill.name}
                 icon={skill.icon}
-                exemple={skill.exemple}
+                description={skill.exemple}
                 index={index}
               />
             ))}

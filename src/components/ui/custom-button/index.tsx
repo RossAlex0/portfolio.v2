@@ -15,6 +15,7 @@ export default function CustomButton({
       type="button"
       {...props}
       className={`${buttonClass} ${props.className}`}
+      aria-label="button"
     >
       <CustomText style={{ color: "#fffcee", ...textStyle }}>
         {children ? (

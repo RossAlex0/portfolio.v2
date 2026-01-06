@@ -69,7 +69,7 @@ export default function Contact() {
       setTimeout(() => {
         setResApi(null);
         router.back();
-      }, 2500);
+      }, 3500);
     }
   }, [isDisabled, router, sendMail]);
 

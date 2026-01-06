@@ -10,6 +10,10 @@ type Description = {
   en: string | null;
 };
 
+export enum StyleProject {
+  PRO = "pro",
+  PERSO = "perso",
+}
 export enum FormatProject {
   WEB = "Web",
   MOBILE = "Mobile",
@@ -37,6 +41,7 @@ export type Project = {
   format: FormatProject[];
   type: TypeProject[];
   description: Description;
+  style: "perso" | "pro";
 };
 
 export type SoftSkills = {

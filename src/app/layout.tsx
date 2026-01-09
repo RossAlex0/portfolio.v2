@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "@/styles/globals.css";
 
@@ -9,6 +10,7 @@ export const viewport = {
   initialScale: 1,
   themeColor: "#0f0f0f",
 };
+
 export const metadata: Metadata = {
   title: "Alex Rossignol – Développeur Web & Mobile",
   description:
@@ -220,6 +222,7 @@ export default function RootLayout({
       <body>
         {children}
         <Analytics mode="production" />
+        <SpeedInsights />
       </body>
     </html>
   );

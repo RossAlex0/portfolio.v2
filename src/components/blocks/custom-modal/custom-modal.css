@@ -1,0 +1,46 @@
+.custom_modal_container {
+  height: 100lvh;
+  width: 100lvw;
+  position: relative;
+}
+
+.custom_modal_back_button {
+  position: absolute;
+  width: fit-content;
+  top: 5%;
+  left: 3%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.custom_modal_text_background {
+  position: absolute;
+  font-size: 7rem;
+  font-family: var(--font-text-bold);
+  background: linear-gradient(to bottom, #0000000a, var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.custom_modal_block {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 24px;
+  border: 1px solid var(--light-grey-color);
+  background-color: var(--primary-color);
+  padding: 2rem;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.2),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+}

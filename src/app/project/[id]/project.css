@@ -1,32 +1,3 @@
-.project_screen_container {
-  height: 100dvh;
-  width: 100%;
-  position: relative;
-}
-
-.project_button {
-  position: absolute;
-  width: fit-content;
-  top: 5%;
-  left: 3%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  z-index: 1;
-}
-
-.project_modal {
-  height: auto;
-  width: 90%;
-  max-width: 900px;
-  background-color: var(--secondary-color);
-  margin: auto;
-  border-radius: 24px;
-  padding: 2rem 1.5rem;
-  box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.25),
-    0 10px 20px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-
 .project_modal_header_icon {
   display: flex;
   gap: 1rem;
@@ -36,7 +7,7 @@
   height: 1px;
   width: 100%;
   opacity: 0.8;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   margin-block: 1rem;
 }
 
@@ -44,6 +15,15 @@
   gap: 15%;
   margin-top: 1rem;
   margin-bottom: 2rem;
+}
+.project_modal_image {
+  object-fit: contain;
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 300px;
+  border-radius: 12px;
+  border: 1px solid var(--grey-color);
 }
 
 .project_modal_techno {
@@ -69,16 +49,10 @@
   z-index: 0;
 }
 
-.project_text_color {
-  /* !important add because when connection are very slow the text is dark color, i don't know why.. */
-  color: var(--primary-color) !important;
-}
-
 .project_text_bold {
   font-family: var(--font-text-bold);
 }
 
-.project_text_description {
-  line-height: 1.4rem;
-  font-size: 1.1rem;
+.project_text_font {
+  font-family: var(--font-text-regular);
 }

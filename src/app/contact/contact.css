@@ -1,59 +1,15 @@
-.contact_container {
-  height: 100lvh;
-  width: 100lvw;
-  position: relative;
-}
-
-.contact_back_button {
-  position: absolute !important;
-  width: fit-content;
-  top: 5%;
-  left: 3%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  z-index: 1;
-}
-
-.contact_block {
-  max-width: 90%;
-  max-height: 80%;
-  min-height: 65%;
-  min-width: 45%;
-  background-color: var(--secondary-color);
-  border-radius: 32px;
-  padding: 2rem;
-  gap: 3rem;
-  box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.25),
-    0 10px 20px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-
-.contact_button {
+.contact_form {
   width: 100%;
-  margin-top: 6rem;
-  justify-content: center;
-  gap: 10%;
-}
-
-.contact_text_background {
-  position: absolute;
-  font-size: 7rem;
-  font-family: var(--font-text-bold);
-  background: linear-gradient(to bottom, #0000000a, var(--primary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  white-space: nowrap;
-  user-select: none;
-  pointer-events: none;
-  left: 50%;
-  top: 3%;
-  transform: translateX(-50%);
-  z-index: 0;
+  gap: 1.5rem;
 }
 
 .res_api {
   margin: auto;
   gap: 0.8rem;
+}
+
+.contact_button {
+  width: 100%;
+  justify-content: flex-end;
+  gap: 5%;
 }

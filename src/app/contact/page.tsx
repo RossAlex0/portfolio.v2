@@ -3,13 +3,12 @@
 import CustomInput from "@/components/ui/custom-input";
 import CustomButton from "@/components/ui/custom-button";
 import { useRouter } from "next/navigation";
-import SectionTitle from "@/components/ui/section-title";
-import { motion } from "framer-motion";
 import CustomText from "@/components/ui/custom-text";
 import React from "react";
+import usePostMail from "@/services/hook/usePostMail";
+import CustomModalPage from "@/components/blocks/custom-modal";
 
 import "./contact.css";
-import usePostMail from "@/services/hook/usePostMail";
 
 export default function Contact() {
   const router = useRouter();
@@ -23,16 +22,6 @@ export default function Contact() {
     name: "",
     message: "",
   });
-
-  const buttonStyle = {
-    style: {
-      width: "fit-content",
-      border: "1px solid #fffcee",
-    },
-    textStyle: {
-      fontFamily: "Rubik-bold",
-    },
-  } as const;
 
   const isDisabled = React.useMemo(() => {
     if (
@@ -97,24 +86,12 @@ export default function Contact() {
   };
 
   return (
-    <section className="contact_container flex_row_center_center">
-      <CustomButton className="contact_back_button" onClick={router.back}>
-        Retour
-      </CustomButton>
-      <CustomText isTitle className="contact_text_background">
-        Formulaire de contact
-      </CustomText>
-      <motion.div
-        className="contact_block flex_column"
-        initial={{ opacity: 0, y: 60 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
-      >
-        {resAppi === null ? (
-          <>
-            <SectionTitle containerStyle={{ marginBottom: 0 }} color="#fffcee">
-              Contactez moi
-            </SectionTitle>
+    <CustomModalPage backgroundText="Contact" style={{ gap: "4rem" }}>
+      {resAppi === null ? (
+        <>
+          <CustomText isTitle>Contactez moi</CustomText>
+
+          <div className="contact_form flex_column">
             <div className="flex_row" style={{ width: "100%", gap: "2rem" }}>
               <CustomInput
                 label="Nom / Entreprise"
@@ -148,24 +125,21 @@ export default function Contact() {
                 setFormContact({ ...formContact, message: v })
               }
             />
-
-            <div className="contact_button flex_row">
-              <CustomButton onClick={router.back} {...buttonStyle}>
-                Fermer
-              </CustomButton>
-              <CustomButton
-                disabled={isDisabled}
-                onClick={handleClickSendButton}
-                {...buttonStyle}
-              >
-                Envoyer
-              </CustomButton>
-            </div>
-          </>
-        ) : (
-          responseApiComponent()
-        )}
-      </motion.div>
-    </section>
+          </div>
+          <div className="contact_button flex_row">
+            <CustomButton theme="light">Fermer</CustomButton>
+            <CustomButton
+              disabled={isDisabled}
+              onClick={handleClickSendButton}
+              href="#"
+            >
+              Envoyer
+            </CustomButton>
+          </div>
+        </>
+      ) : (
+        responseApiComponent()
+      )}
+    </CustomModalPage>
   );
 }

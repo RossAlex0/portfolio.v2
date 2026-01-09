@@ -217,8 +217,10 @@ export default function RootLayout({
     ${dmBold.variable} 
   `}
     >
-      <body>{children}</body>
-      <Analytics mode="production" />
+      <body>
+        {children}
+        <Analytics mode="production" />
+      </body>
     </html>
   );
 }

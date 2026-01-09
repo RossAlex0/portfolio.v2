@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-// import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/next";
 
 import "@/styles/globals.css";
 
@@ -218,7 +218,7 @@ export default function RootLayout({
   `}
     >
       <body>{children}</body>
-      {/* <Analytics mode="production" />; */}
+      <Analytics mode="production" />
     </html>
   );
 }

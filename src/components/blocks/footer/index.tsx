@@ -4,10 +4,40 @@ import { motion } from "framer-motion";
 
 import "./footer.css";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import SocialLink from "@/components/ui/social-link";
 
 export default function Footer() {
-  const router = useRouter();
+  const socialLinks = [
+    {
+      href: "https://github.com/RossAlex0",
+      iconName: "FaGithub",
+      label: "Github",
+      light: true,
+      size: 28,
+    },
+    {
+      href: "https://gitlab.com/alex.rossignol",
+      iconName: "SiGitlab",
+      label: "Gitlab",
+      light: true,
+      size: 28,
+    },
+    {
+      href: "https://linkedin.com/in/rossignolalex",
+      iconName: "SiLinkedin",
+      label: "LinkedIn",
+      light: true,
+      size: 28,
+    },
+    {
+      href: "/contact",
+      iconName: "TbMail",
+      label: "Email",
+      light: true,
+      size: 28,
+    },
+  ] as const;
+
   return (
     <footer className="footer_container flex_column_center_center">
       <motion.div
@@ -37,41 +67,18 @@ export default function Footer() {
               en production - Le détail fait la différence.
             </CustomText>
             <div className="footer_link flex_row">
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="https://github.com/RossAlex0"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <CustomIcon name="FaGithub" size={28} color="#fffcee" />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="https://gitlab.com/alex.rossignol"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <CustomIcon name="SiGitlab" size={28} color="#fffcee" />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="https://linkedin.com/in/rossignolalex"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <CustomIcon name="SiLinkedin" size={28} color="#fffcee" />
-              </motion.a>
-              <motion.button
-                whileHover={{ scale: 1.2 }}
-                style={{
-                  border: "none",
-                  background: "none",
-                  cursor: "pointer",
-                }}
-                onClick={() => router.push("/contact")}
-              >
-                <CustomIcon name="TbMail" size={28} color="#fffcee" />
-              </motion.button>
+              {socialLinks.map((link, index) => (
+                <SocialLink
+                  key={index}
+                  href={link.href}
+                  target={link.label === "Email" ? "_self" : "_blank"}
+                  iconName={link.iconName}
+                  label={link.label}
+                  light={link.light}
+                  size={link.size}
+                  disabledAnimation={true}
+                />
+              ))}
             </div>
           </div>
         </div>

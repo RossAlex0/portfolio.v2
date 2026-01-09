@@ -8,7 +8,7 @@ import {
 
 export const projects: Project[] = [
   {
-    id: 0,
+    id: 1,
     name: "Cercle des vignerons",
     year: "2025",
     techno: [
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     style: StyleProject.PRO,
   },
   {
-    id: 1,
+    id: 2,
     name: "Street Art Hunter",
     year: "2024",
     techno: [
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     style: StyleProject.PERSO,
   },
   {
-    id: 2,
+    id: 3,
     name: "WildWeather",
     year: "2024",
     techno: [
@@ -120,7 +120,7 @@ export const projects: Project[] = [
     style: StyleProject.PRO,
   },
   {
-    id: 3,
+    id: 5,
     name: "Hinfact",
     year: "2025",
     techno: [
@@ -155,7 +155,7 @@ export const projects: Project[] = [
     style: StyleProject.PRO,
   },
   {
-    id: 5,
+    id: 6,
     name: "BudgetMade",
     year: "2024",
     techno: [
@@ -185,7 +185,7 @@ export const projects: Project[] = [
     style: StyleProject.PERSO,
   },
   {
-    id: 6,
+    id: 7,
     name: "Product designer Portfolio",
     year: "2024",
     techno: [
@@ -211,7 +211,7 @@ export const projects: Project[] = [
     style: StyleProject.PRO,
   },
   {
-    id: 7,
+    id: 8,
     name: "Pokedex",
     year: "2024",
     techno: [

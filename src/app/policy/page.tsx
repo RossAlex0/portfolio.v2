@@ -2,13 +2,10 @@
 
 import CustomText from "@/components/ui/custom-text";
 import CustomButton from "@/components/ui/custom-button";
-import { useRouter } from "next/navigation";
 
 import "./policy.css";
 
 export default function Policy() {
-  const router = useRouter();
-
   return (
     <section className="policy_container">
       <h1 className="policy_title">Mentions légales</h1>
@@ -34,10 +31,7 @@ export default function Policy() {
           https://vercel.com
         </a>
       </CustomText>
-      <CustomButton
-        onClick={() => router.push("/")}
-        style={{ width: "fit-content", marginTop: "5rem" }}
-      >
+      <CustomButton style={{ width: "fit-content", marginTop: "5rem" }}>
         Retour
       </CustomButton>
     </section>

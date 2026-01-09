@@ -114,8 +114,8 @@ export const projects: Project[] = [
     format: [FormatProject.API],
     type: [TypeProject.BACK],
     description: {
-      fr: "Cette API a été créée pour gérer l’envoi d’emails via Gmail SMTP depuis un formulaire de contact, avec un haut niveau de sécurité.\nElle intègre une validation stricte des champs, un système de sanitation, une gestion par tokens pour contrôler l’accès, ainsi qu’un limiteur de requêtes pour éviter tout abus. Elle sert aujourd’hui de base fiable, performante et sécurisée pour plusieurs des sites web que j’ai développés.",
-      en: "This API was created to handle email sending through Gmail SMTP from a contact form, with a strong focus on security. It includes strict field validation, input sanitization, token-based access control, and a rate limiter to prevent abuse. It now serves as a reliable, high-performance, and secure foundation for several of the websites I’ve developed.",
+      fr: "Cette API Node.js / Express a été développée pour gérer l’envoi d’emails via Gmail SMTP depuis un formulaire de contact, avec une attention particulière portée à la sécurité et à la fiabilité. Elle intègre une validation des données avec Joi, une sanitation des contenus, un contrôle d’accès par token et un rate limiter pour prévenir les abus. Un cron assure également l’envoi hebdomadaire des analytics du site. Elle sert aujourd’hui de socle backend robuste et sécurisé pour plusieurs sites web que j’ai conçus.",
+      en: "This Node.js / Express API was built to handle email delivery via Gmail SMTP from a contact form, with a strong emphasis on security and reliability. It features data validation with Joi, input sanitization, token-based access control, and rate limiting to prevent abuse. A scheduled cron job also sends weekly website analytics. It now acts as a robust and secure backend foundation for several websites I’ve built.",
     },
     style: StyleProject.PRO,
   },
@@ -157,7 +157,7 @@ export const projects: Project[] = [
   {
     id: 6,
     name: "BudgetMade",
-    year: "2024",
+    year: "2025",
     techno: [
       { name: "TypeScript", icon: "SiTypescript" },
       {

@@ -2,13 +2,10 @@
 
 import CustomText from "@/components/ui/custom-text";
 import CustomButton from "@/components/ui/custom-button";
-import { useRouter } from "next/navigation";
 
 import "./confidentialite.css";
 
 export default function Confidentialite() {
-  const router = useRouter();
-
   return (
     <section className="conf_container">
       <h1 className="conf_title">Politique de confidentialité</h1>
@@ -41,10 +38,7 @@ export default function Confidentialite() {
         supprimer vos données en envoyant un message à :{" "}
         <strong>alexnw33910@gmail.com</strong>
       </CustomText>
-      <CustomButton
-        onClick={() => router.push("/")}
-        style={{ width: "fit-content", marginTop: "5rem" }}
-      >
+      <CustomButton style={{ width: "fit-content", marginTop: "5rem" }}>
         Retour
       </CustomButton>
     </section>

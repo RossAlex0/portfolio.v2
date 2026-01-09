@@ -23,7 +23,7 @@ export default function CustomInput({
   const focusCircle = React.useCallback(
     () => (
       <div className="custom_input_chevron">
-        <CustomIcon name="TbCircle" color="#fffcee" size={8} />
+        <CustomIcon name="TbCircle" color="#171717" size={8} />
       </div>
     ),
     []
@@ -74,7 +74,7 @@ export default function CustomInput({
                 left: 0,
                 scale: 0.7,
                 y: 0,
-                color: "#fffcee",
+                color: "#171717",
               }
             : {
                 top: "50%",

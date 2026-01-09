@@ -2,7 +2,6 @@
 
 import CustomText from "@/components/ui/custom-text";
 import CustomButton from "@/components/ui/custom-button";
-import { useRouter } from "next/navigation";
 
 import "./header.css";
 
@@ -12,8 +11,6 @@ export default function Header() {
     { link: "#skill", label: "Compétences" },
     { link: "#about", label: "À Propos" },
   ];
-
-  const router = useRouter();
 
   return (
     <header>
@@ -26,7 +23,7 @@ export default function Header() {
           </a>
         ))}
       </div>
-      <CustomButton onClick={() => router.push("/contact")} />
+      <CustomButton href="/contact" />
     </header>
   );
 }

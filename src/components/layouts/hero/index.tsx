@@ -1,3 +1,5 @@
+"use client";
+
 import WordsRotate from "@/components/ui/words-rotate";
 import CustomText from "@/components/ui/custom-text";
 import { motion } from "framer-motion";

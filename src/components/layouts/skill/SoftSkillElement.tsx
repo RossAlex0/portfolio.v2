@@ -12,6 +12,7 @@ export default function SoftSkillElement({
   description,
   index,
 }: SoftSkillElementProps) {
+  const amount = window.innerWidth <= 768 ? 0.3 + index / 10 : 0.3;
   return (
     <motion.div
       className="soft_skill_element flex_row"
@@ -33,7 +34,7 @@ export default function SoftSkillElement({
           ease: "easeInOut",
         },
       }}
-      viewport={{ amount: 0.3 + index / 10, once: true }}
+      viewport={{ amount, once: true }}
       transition={{
         duration: 0.6,
         ease: "easeOut",

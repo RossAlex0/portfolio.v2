@@ -39,18 +39,36 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         viewport={{ amount: 0, once: true }}
       >
-        <CustomText className="hero_title" isTitle>
-          Développeur passionné de <br />
-          solutions web et mobile,
-        </CustomText>
-        <CustomText
-          className="hero_title"
-          style={{ overflow: "hidden" }}
-          isTitle
-        >
-          conçues pour&nbsp;
-          <WordsRotate words={["vous.", "nous.", "tous."]} />
-        </CustomText>
+        {window.innerWidth <= 768 ? (
+          <>
+            <CustomText className="hero_title" isTitle>
+              Développeur passionné de solutions web et mobile, conçues
+            </CustomText>
+            <CustomText
+              className="hero_title"
+              style={{ overflow: "hidden" }}
+              isTitle
+            >
+              pour&nbsp;
+              <WordsRotate words={["vous.", "nous.", "tous."]} />
+            </CustomText>
+          </>
+        ) : (
+          <>
+            <CustomText className="hero_title" isTitle>
+              Développeur passionné de <br />
+              solutions web et mobile,
+            </CustomText>
+            <CustomText
+              className="hero_title"
+              style={{ overflow: "hidden" }}
+              isTitle
+            >
+              conçues pour&nbsp;
+              <WordsRotate words={["vous.", "nous.", "tous."]} />
+            </CustomText>
+          </>
+        )}
       </motion.div>
       <div className="hero_link flex_row_center_center">
         {socialLinks.map((link, index) => (

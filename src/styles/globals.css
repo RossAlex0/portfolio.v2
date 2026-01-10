@@ -88,3 +88,10 @@ main {
   --max-text-size: 18px;
   --title-size: 24px;
 }
+
+@media (max-width: 768px) {
+  .section_container {
+    width: 100%;
+    padding: 5lvh 1.5rem 0 1.5rem;
+  }
+}

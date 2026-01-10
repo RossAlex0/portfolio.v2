@@ -64,4 +64,7 @@ header {
   .nav-link {
     display: none;
   }
+  .header_separator {
+    display: none;
+  }
 }

@@ -7,6 +7,7 @@ import Link from "next/link";
 import SocialLink from "@/components/ui/social-link";
 
 export default function Footer() {
+  const isMobileDevice = window.innerWidth <= 768;
   const socialLinks = [
     {
       href: "https://github.com/RossAlex0",
@@ -62,10 +63,12 @@ export default function Footer() {
             </CustomText>
           </div>
           <div className="footer_head_infos flex_column">
-            <CustomText className="infos_user">
-              Passionné, rigoureux, toujours en mouvement - Du concept à la mise
-              en production - Le détail fait la différence.
-            </CustomText>
+            {isMobileDevice ? undefined : (
+              <CustomText className="infos_user">
+                Passionné, rigoureux, toujours en mouvement - Du concept à la
+                mise en production - Le détail fait la différence.
+              </CustomText>
+            )}
             <div className="footer_link flex_row">
               {socialLinks.map((link, index) => (
                 <SocialLink

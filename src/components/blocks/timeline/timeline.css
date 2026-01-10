@@ -52,6 +52,7 @@
 
 .timeline-item.left {
   flex-direction: row;
+  text-align: end;
 }
 
 .timeline-item.right {
@@ -61,10 +62,6 @@
 .timeline-content {
   width: 45%;
   padding: 0 1.5rem;
-}
-
-.timeline-item.left {
-  text-align: end;
 }
 
 .timeline-item-title {
@@ -99,10 +96,14 @@
 }
 
 @media (max-width: 768px) {
+  .timeline-section {
+    margin-top: 2rem;
+  }
   .timeline-item {
     flex-direction: column !important;
     align-items: center;
     text-align: center;
+    justify-content: center;
   }
 
   .timeline-content {
@@ -110,12 +111,18 @@
     padding: 0;
   }
 
+  .timeline-content.left {
+    text-align: center;
+  }
+  .timeline-content.timeline-item.right {
+    text-align: center;
+  }
+
   .timeline-dot {
-    margin: 20px 0;
+    margin: 1rem auto 2rem auto;
   }
 
   .timeline-line {
-    left: 20px;
-    transform: none;
+    display: none;
   }
 }

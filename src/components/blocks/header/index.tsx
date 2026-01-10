@@ -4,6 +4,7 @@ import CustomText from "@/components/ui/custom-text";
 import CustomButton from "@/components/ui/custom-button";
 
 import "./header.css";
+import Link from "next/link";
 
 export default function Header() {
   const infos = [
@@ -18,9 +19,9 @@ export default function Header() {
         <CustomText isTitle>Alex Rossignol</CustomText>
         <span className="header_separator"></span>
         {infos.map((info) => (
-          <a key={info.label} href={info.link} className="nav-link">
+          <Link key={info.label} href={info.link} className="nav-link">
             <CustomText>{info.label}</CustomText>
-          </a>
+          </Link>
         ))}
       </div>
       <CustomButton href="/contact" />

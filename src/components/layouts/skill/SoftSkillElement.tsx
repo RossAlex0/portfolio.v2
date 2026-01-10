@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import CustomIcon from "@/components/ui/custom-icon";
 import CustomText from "@/components/ui/custom-text";
 import { SoftSkillElementProps } from "./type";
+import { useWindowSize } from "@/services/hook/useWindowSize";
 
 export default function SoftSkillElement({
   name,
@@ -12,6 +13,9 @@ export default function SoftSkillElement({
   description,
   index,
 }: SoftSkillElementProps) {
+  const { width } = useWindowSize();
+
+  const amount = width && width >= 768 ? 0.3 + index / 10 : 0.3;
   return (
     <motion.div
       className="soft_skill_element flex_row"
@@ -33,7 +37,7 @@ export default function SoftSkillElement({
           ease: "easeInOut",
         },
       }}
-      viewport={{ amount: 0.3 + index / 10, once: true }}
+      viewport={{ amount, once: true }}
       transition={{
         duration: 0.6,
         ease: "easeOut",

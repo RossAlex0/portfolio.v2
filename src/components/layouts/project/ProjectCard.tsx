@@ -20,6 +20,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       <Link
         href={`/project/${project.id}`}
         aria-label={`Voir ${project.name}`}
+        prefetch={false}
         className="project_image_link"
       >
         <motion.div

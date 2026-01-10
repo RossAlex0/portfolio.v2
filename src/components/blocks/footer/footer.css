@@ -107,5 +107,12 @@
   }
   .footer_legal {
     width: auto;
+    flex-direction: column;
+  }
+  .infos_user {
+    text-align: center;
+  }
+  .title_footer {
+    font-size: 4.5rem;
   }
 }

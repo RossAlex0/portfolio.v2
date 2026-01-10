@@ -5,9 +5,12 @@ import Pils from "@/components/ui/pils";
 import React from "react";
 
 import "./timeline.css";
+import { useWindowSize } from "@/services/hook/useWindowSize";
 
 export default function Timeline() {
-  const isMobileDevice = window.innerWidth <= 768;
+  const { width } = useWindowSize();
+
+  const isMobileDevice = width && width <= 768;
 
   const renderDot = React.useCallback((item: (typeof timelineItems)[0]) => {
     return (

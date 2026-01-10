@@ -2,12 +2,15 @@
 
 import WordsRotate from "@/components/ui/words-rotate";
 import CustomText from "@/components/ui/custom-text";
-import { motion } from "framer-motion";
 import SocialLink from "@/components/ui/social-link";
+import { motion } from "framer-motion";
 
 import "./hero.css";
+import { useWindowSize } from "@/services/hook/useWindowSize";
 
 export default function Hero() {
+  const { width } = useWindowSize();
+
   const socialLinks = [
     {
       href: "https://linkedin.com/in/rossignolalex",
@@ -41,7 +44,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         viewport={{ amount: 0, once: true }}
       >
-        {window.innerWidth <= 768 ? (
+        {width && width <= 768 ? (
           <>
             <CustomText className="hero_title" isTitle>
               Développeur passionné de solutions web et mobile, conçues

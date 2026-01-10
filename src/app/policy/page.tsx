@@ -9,7 +9,7 @@ export default function Policy() {
   return (
     <section className="policy_container">
       <h1 className="policy_title">Mentions légales</h1>
-      <CustomText>Dernière mise à jour : juillet 2025</CustomText>
+      <CustomText>Dernière mise à jour : Janvier 2026</CustomText>
 
       <CustomText isTitle>Éditeur du site</CustomText>
       <CustomText>

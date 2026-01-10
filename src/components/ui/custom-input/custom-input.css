@@ -12,6 +12,8 @@
   border: none;
   color: var(--secondary-color);
   padding: 0.5rem;
+  font-size: 16px;
+  touch-action: manipulation;
 }
 
 .input_label {
@@ -22,11 +24,11 @@
 }
 
 .focus {
-  border-bottom: 1px solid var(--secondary-color);
+  box-shadow: 0 1px 0 0 var(--secondary-color);
 }
 
 .not_focus {
-  border-bottom: 0.5px solid var(--secondary-color);
+  box-shadow: 0 0.5px 0 0 var(--secondary-color);
 }
 
 .custom_input_chevron {

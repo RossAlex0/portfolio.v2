@@ -9,10 +9,13 @@ import usePostMail from "@/services/hook/usePostMail";
 import CustomModalPage from "@/components/blocks/custom-modal";
 
 import "./contact.css";
+import { useWindowSize } from "@/services/hook/useWindowSize";
+import Loading from "../loading";
 
 export default function Contact() {
   const router = useRouter();
   const sendMail = usePostMail();
+  const { width } = useWindowSize();
 
   const [resAppi, setResApi] = React.useState<boolean | null>(null);
 
@@ -85,6 +88,9 @@ export default function Contact() {
     }
   };
 
+  if (!width) return <Loading />;
+
+  const firstANdSecondInputWidth = width <= 768 ? "100%" : "50%";
   return (
     <CustomModalPage backgroundText="Contact" style={{ gap: "4rem" }}>
       {resAppi === null ? (
@@ -92,10 +98,12 @@ export default function Contact() {
           <CustomText isTitle>Contactez moi</CustomText>
 
           <div className="contact_form flex_column">
-            <div className="flex_row" style={{ width: "100%", gap: "2rem" }}>
+            <div
+              className={`contact_name_email flex_${width <= 768 ? "column" : "row"}`}
+            >
               <CustomInput
                 label="Nom / Entreprise"
-                inputWidth={"50%"}
+                inputWidth={firstANdSecondInputWidth}
                 value={formContact.name}
                 setValue={(v: string) =>
                   setFormContact({ ...formContact, name: v })
@@ -103,7 +111,7 @@ export default function Contact() {
               />
               <CustomInput
                 label="Email"
-                inputWidth={"50%"}
+                inputWidth={firstANdSecondInputWidth}
                 value={formContact.email}
                 setValue={(v: string) =>
                   setFormContact({ ...formContact, email: v })

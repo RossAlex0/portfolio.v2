@@ -45,6 +45,22 @@
   flex-wrap: wrap;
 }
 
+@media (max-width: 768px) {
+  .skill_container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .hard_tools_container {
+    width: 100%;
+  }
+  .skills_mapping {
+    justify-content: center;
+  }
+  .hard_tools_container {
+    margin-bottom: 4rem;
+  }
+}
+
 /* SoftSkillsElement */
 
 .soft_skill_element_container {
@@ -61,4 +77,18 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .soft_skill {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  .soft_skill_block {
+    width: 100%;
+    flex-direction: column;
+  }
+  .soft_skill_element {
+    width: 100%;
+  }
 }

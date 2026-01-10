@@ -1,12 +1,17 @@
 import CustomText from "@/components/ui/custom-text";
 import CustomIcon from "@/components/ui/custom-icon";
 import { motion } from "framer-motion";
-
-import "./footer.css";
 import Link from "next/link";
 import SocialLink from "@/components/ui/social-link";
+import { useWindowSize } from "@/services/hook/useWindowSize";
+
+import "./footer.css";
 
 export default function Footer() {
+  const { width } = useWindowSize();
+
+  const isMobileDevice = width && width <= 768;
+
   const socialLinks = [
     {
       href: "https://github.com/RossAlex0",
@@ -62,10 +67,12 @@ export default function Footer() {
             </CustomText>
           </div>
           <div className="footer_head_infos flex_column">
-            <CustomText className="infos_user">
-              Passionné, rigoureux, toujours en mouvement - Du concept à la mise
-              en production - Le détail fait la différence.
-            </CustomText>
+            {isMobileDevice ? undefined : (
+              <CustomText className="infos_user">
+                Passionné, rigoureux, toujours en mouvement - Du concept à la
+                mise en production - Le détail fait la différence.
+              </CustomText>
+            )}
             <div className="footer_link flex_row">
               {socialLinks.map((link, index) => (
                 <SocialLink
@@ -92,7 +99,9 @@ export default function Footer() {
                 Politique de confidentialités
               </CustomText>
             </Link>
-            <CustomText className="infos_user legal_link">-</CustomText>
+            {isMobileDevice ? undefined : (
+              <CustomText className="infos_user legal_link">-</CustomText>
+            )}
             <Link href="/policy" style={{ color: "#fffcee" }}>
               <CustomText className="infos_user legal_link">
                 Mentions légales

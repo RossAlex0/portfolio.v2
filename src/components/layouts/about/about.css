@@ -17,3 +17,9 @@
   margin-top: 2rem;
   gap: 1rem;
 }
+
+@media (max-width: 768px) {
+  .about_desc {
+    width: 100%;
+  }
+}

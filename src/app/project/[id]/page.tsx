@@ -6,12 +6,20 @@ import CustomText from "@/components/ui/custom-text";
 import Image from "next/image";
 import Pils from "@/components/ui/pils";
 import CustomModalPage from "@/components/blocks/custom-modal";
+import SocialLink from "@/components/ui/social-link";
+import { useWindowSize } from "@/services/hook/useWindowSize";
+import React from "react";
 
 import "./project.css";
-import SocialLink from "@/components/ui/social-link";
+import Loading from "@/app/loading";
 
 export default function ProjectPage() {
   const { id: urlProjectId } = useParams();
+  const { width } = useWindowSize();
+
+  if (!width) return <Loading />;
+
+  const disabledSocialLinkAnimation = width <= 768;
 
   const project = projects.find(
     (project) => project.id.toString() === urlProjectId
@@ -36,6 +44,7 @@ export default function ProjectPage() {
               delay={1}
               size={28}
               label="Github"
+              disabledAnimation={true}
             />
           ) : undefined}
           {project.link ? (
@@ -45,6 +54,7 @@ export default function ProjectPage() {
               delay={1}
               size={28}
               label="Site Web"
+              disabledAnimation={disabledSocialLinkAnimation}
             />
           ) : undefined}
           {project.video ? (
@@ -54,6 +64,7 @@ export default function ProjectPage() {
               delay={1}
               size={28}
               label="Video"
+              disabledAnimation={disabledSocialLinkAnimation}
             />
           ) : undefined}
         </div>

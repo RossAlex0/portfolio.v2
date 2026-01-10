@@ -94,7 +94,11 @@ export default function Footer() {
             © 2025 – Tous droits réservés · Alex Rossignol
           </CustomText>
           <div className="footer_legal flex_row">
-            <Link href="/confidentialite" style={{ color: "#fffcee" }}>
+            <Link
+              href="/confidentialite"
+              prefetch={false}
+              style={{ color: "#fffcee" }}
+            >
               <CustomText className="infos_user legal_link">
                 Politique de confidentialités
               </CustomText>
@@ -102,7 +106,7 @@ export default function Footer() {
             {isMobileDevice ? undefined : (
               <CustomText className="infos_user legal_link">-</CustomText>
             )}
-            <Link href="/policy" style={{ color: "#fffcee" }}>
+            <Link href="/policy" prefetch={false} style={{ color: "#fffcee" }}>
               <CustomText className="infos_user legal_link">
                 Mentions légales
               </CustomText>

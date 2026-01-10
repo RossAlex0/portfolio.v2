@@ -3,14 +3,15 @@ import CustomText from "@/components/ui/custom-text";
 import { timelineItems } from "@/services/data";
 import Pils from "@/components/ui/pils";
 import React from "react";
+import { useWindowSize } from "@/services/hook/useWindowSize";
+import { mobileWidth } from "@/services/const";
 
 import "./timeline.css";
-import { useWindowSize } from "@/services/hook/useWindowSize";
 
 export default function Timeline() {
   const { width } = useWindowSize();
 
-  const isMobileDevice = width && width <= 768;
+  const isMobileDevice = width && width <= mobileWidth;
 
   const renderDot = React.useCallback((item: (typeof timelineItems)[0]) => {
     return (

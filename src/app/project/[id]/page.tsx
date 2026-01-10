@@ -8,10 +8,10 @@ import Pils from "@/components/ui/pils";
 import CustomModalPage from "@/components/blocks/custom-modal";
 import SocialLink from "@/components/ui/social-link";
 import { useWindowSize } from "@/services/hook/useWindowSize";
-import React from "react";
+import Loading from "@/app/loading";
+import { mobileWidth } from "@/services/const";
 
 import "./project.css";
-import Loading from "@/app/loading";
 
 export default function ProjectPage() {
   const { id: urlProjectId } = useParams();
@@ -19,7 +19,7 @@ export default function ProjectPage() {
 
   if (!width) return <Loading />;
 
-  const disabledSocialLinkAnimation = width <= 768;
+  const disabledSocialLinkAnimation = width <= mobileWidth;
 
   const project = projects.find(
     (project) => project.id.toString() === urlProjectId

@@ -4,13 +4,14 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import SocialLink from "@/components/ui/social-link";
 import { useWindowSize } from "@/services/hook/useWindowSize";
+import { mobileWidth } from "@/services/const";
 
 import "./footer.css";
 
 export default function Footer() {
   const { width } = useWindowSize();
 
-  const isMobileDevice = width && width <= 768;
+  const isMobileDevice = width && width <= mobileWidth;
 
   const socialLinks = [
     {

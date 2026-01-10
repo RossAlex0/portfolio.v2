@@ -97,3 +97,9 @@
 .button_custom:hover .button_overlay_light {
   transform: translate(-32%, -50%);
 }
+
+@media (max-width: 768px) {
+  .text_arrow {
+    display: none;
+  }
+}

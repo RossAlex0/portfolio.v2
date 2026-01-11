@@ -4,9 +4,10 @@ import WordsRotate from "@/components/ui/words-rotate";
 import CustomText from "@/components/ui/custom-text";
 import SocialLink from "@/components/ui/social-link";
 import { motion } from "framer-motion";
+import { useWindowSize } from "@/services/hook/useWindowSize";
+import { mobileWidth } from "@/services/const";
 
 import "./hero.css";
-import { useWindowSize } from "@/services/hook/useWindowSize";
 
 export default function Hero() {
   const { width } = useWindowSize();
@@ -44,7 +45,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         viewport={{ amount: 0, once: true }}
       >
-        {width && width <= 768 ? (
+        {width && width <= mobileWidth ? (
           <>
             <CustomText className="hero_title" isTitle>
               Développeur passionné de solutions web et mobile, conçues

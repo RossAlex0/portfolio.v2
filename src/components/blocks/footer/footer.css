@@ -84,6 +84,20 @@
     gap: 1rem;
   }
 }
+@media (max-width: 1024px) and (orientation: portrait) {
+  .footer_link {
+    margin-top: 2rem;
+  }
+  .infos_user {
+    text-align: center;
+  }
+  .footer_footer {
+    justify-content: center;
+  }
+  .footer_legal {
+    width: auto;
+  }
+}
 
 @media (max-width: 768px) {
   .footer_block {

@@ -4,13 +4,15 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import SocialLink from "@/components/ui/social-link";
 import { useWindowSize } from "@/services/hook/useWindowSize";
+import { mobileWidth, tabletPortraitWidth } from "@/services/const";
 
 import "./footer.css";
 
 export default function Footer() {
   const { width } = useWindowSize();
 
-  const isMobileDevice = width && width <= 768;
+  const isMobileDevice = width && width <= mobileWidth;
+  const isTabletPortraitOrMobileDevice = width && width <= tabletPortraitWidth;
 
   const socialLinks = [
     {
@@ -67,7 +69,7 @@ export default function Footer() {
             </CustomText>
           </div>
           <div className="footer_head_infos flex_column">
-            {isMobileDevice ? undefined : (
+            {isTabletPortraitOrMobileDevice ? undefined : (
               <CustomText className="infos_user">
                 Passionné, rigoureux, toujours en mouvement - Du concept à la
                 mise en production - Le détail fait la différence.
@@ -94,7 +96,11 @@ export default function Footer() {
             © 2025 – Tous droits réservés · Alex Rossignol
           </CustomText>
           <div className="footer_legal flex_row">
-            <Link href="/confidentialite" style={{ color: "#fffcee" }}>
+            <Link
+              href="/confidentialite"
+              prefetch={false}
+              style={{ color: "#fffcee" }}
+            >
               <CustomText className="infos_user legal_link">
                 Politique de confidentialités
               </CustomText>
@@ -102,7 +108,7 @@ export default function Footer() {
             {isMobileDevice ? undefined : (
               <CustomText className="infos_user legal_link">-</CustomText>
             )}
-            <Link href="/policy" style={{ color: "#fffcee" }}>
+            <Link href="/policy" prefetch={false} style={{ color: "#fffcee" }}>
               <CustomText className="infos_user legal_link">
                 Mentions légales
               </CustomText>

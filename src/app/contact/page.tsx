@@ -79,13 +79,13 @@ export default function Contact() {
           } else {
             setResApi(!!e);
           }
+
+          setTimeout(() => {
+            setResApi(null);
+            router.back();
+          }, 3000);
         })
         .catch(() => setResApi(false));
-
-      setTimeout(() => {
-        setResApi(null);
-        router.back();
-      }, 3500);
     }
   };
 

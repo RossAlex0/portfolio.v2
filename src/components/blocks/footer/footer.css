@@ -105,6 +105,9 @@
     padding: 0 1rem;
     align-items: center;
   }
+  .footer_link {
+    margin-top: 5%;
+  }
   .footer_head_block {
     flex-direction: column;
     align-items: center;
@@ -128,5 +131,12 @@
   }
   .title_footer {
     font-size: 4.5rem;
+  }
+  .infos_title svg {
+    margin-top: 0.5rem;
+    display: none;
+  }
+  .infos_title p {
+    margin-top: 0.5rem;
   }
 }

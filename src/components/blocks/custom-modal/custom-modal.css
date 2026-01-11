@@ -45,17 +45,25 @@
     0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) and (orientation: portrait) {
+  .custom_modal_text_background {
+    top: 6rem;
+  }
   .custom_modal_container {
     height: 100dvh;
     width: 100dvw;
   }
+  .custom_modal_block {
+    max-width: 90%;
+    max-height: 78%;
+  }
+}
+
+@media (max-width: 768px) {
   .custom_modal_back_button {
     top: 3%;
   }
   .custom_modal_block {
-    max-width: 90%;
-    max-height: 78%;
     overflow: scroll;
   }
   .custom_modal_text_background {

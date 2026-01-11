@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import SocialLink from "@/components/ui/social-link";
 import { useWindowSize } from "@/services/hook/useWindowSize";
-import { mobileWidth } from "@/services/const";
+import { mobileWidth, tabletPortraitWidth } from "@/services/const";
 
 import "./footer.css";
 
@@ -12,6 +12,7 @@ export default function Footer() {
   const { width } = useWindowSize();
 
   const isMobileDevice = width && width <= mobileWidth;
+  const isTabletPortraitOrMobileDevice = width && width <= tabletPortraitWidth;
 
   const socialLinks = [
     {
@@ -68,7 +69,7 @@ export default function Footer() {
             </CustomText>
           </div>
           <div className="footer_head_infos flex_column">
-            {isMobileDevice ? undefined : (
+            {isTabletPortraitOrMobileDevice ? undefined : (
               <CustomText className="infos_user">
                 Passionné, rigoureux, toujours en mouvement - Du concept à la
                 mise en production - Le détail fait la différence.

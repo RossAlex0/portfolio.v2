@@ -9,7 +9,7 @@ import CustomModalPage from "@/components/blocks/custom-modal";
 import SocialLink from "@/components/ui/social-link";
 import { useWindowSize } from "@/services/hook/useWindowSize";
 import Loading from "@/app/loading";
-import { mobileWidth } from "@/services/const";
+import { tabletLandscapeWidth } from "@/services/const";
 
 import "./project.css";
 
@@ -19,7 +19,7 @@ export default function ProjectPage() {
 
   if (!width) return <Loading />;
 
-  const disabledSocialLinkAnimation = width <= mobileWidth;
+  const disabledSocialLinkAnimation = width <= tabletLandscapeWidth;
 
   const project = projects.find(
     (project) => project.id.toString() === urlProjectId
@@ -44,7 +44,7 @@ export default function ProjectPage() {
               delay={1}
               size={28}
               label="Github"
-              disabledAnimation={true}
+              disabledAnimation={disabledSocialLinkAnimation}
             />
           ) : undefined}
           {project.link ? (

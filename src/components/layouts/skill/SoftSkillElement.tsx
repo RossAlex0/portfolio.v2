@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import CustomIcon from "@/components/ui/custom-icon";
 import CustomText from "@/components/ui/custom-text";
 import { SoftSkillElementProps } from "./type";
-import { useWindowSize } from "@/services/hook/useWindowSize";
+import { useWindowSizeContext } from "@/services/context/WindowSizeContext";
 
 export default function SoftSkillElement({
   name,
@@ -13,9 +12,10 @@ export default function SoftSkillElement({
   description,
   index,
 }: SoftSkillElementProps) {
-  const { width } = useWindowSize();
+  const { isMobile } = useWindowSizeContext();
 
-  const amount = width && width >= 768 ? 0.3 + index / 10 : 0.3;
+  const amount = !isMobile ? 0.3 + index / 10 : 0.3;
+
   return (
     <motion.div
       className="soft_skill_element flex_row"

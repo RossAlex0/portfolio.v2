@@ -2,9 +2,9 @@
 
 import CustomText from "@/components/ui/custom-text";
 import CustomButton from "@/components/ui/custom-button";
+import Link from "next/link";
 
 import "./header.css";
-import Link from "next/link";
 
 export default function Header() {
   const infos = [

@@ -2,7 +2,7 @@
   width: 100%;
   gap: 2rem;
   transition: all 0.3s ease-in-out;
-  overflow: hidden;
+  overflow: clip; /* clip au lieu de hidden : même effet visuel, sans bloquer le scroll */
 }
 
 .my-masonry-grid {

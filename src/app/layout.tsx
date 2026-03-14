@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "@/styles/globals.css";
+import { WindowSizeProvider } from "@/services/context/WindowSizeContext";
 
 export const viewport = {
   width: "device-width",
@@ -220,7 +221,7 @@ export default function RootLayout({
   `}
     >
       <body>
-        {children}
+        <WindowSizeProvider>{children}</WindowSizeProvider>
         <Analytics mode="production" />
         <SpeedInsights />
       </body>

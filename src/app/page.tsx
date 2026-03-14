@@ -6,17 +6,27 @@ import Project from "@/components/layouts/project";
 import Skill from "@/components/layouts/skill";
 import About from "@/components/layouts/about";
 import Footer from "@/components/blocks/footer";
+import { useWindowSizeContext } from "@/services/context/WindowSizeContext";
+import Loading from "./loading";
 
 export default function Home() {
+  const { mounted } = useWindowSizeContext();
+
   return (
     <>
       <Header />
       <main>
-        <Hero />
-        <Project />
-        <Skill />
-        <About />
-        <Footer />
+        {mounted ? (
+          <>
+            <Hero />
+            <Project />
+            <Skill />
+            <About />
+            <Footer />
+          </>
+        ) : (
+          <Loading />
+        )}
       </main>
     </>
   );

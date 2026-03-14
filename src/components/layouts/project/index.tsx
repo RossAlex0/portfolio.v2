@@ -1,10 +1,8 @@
 "use client";
 
-import React from "react";
 import Masonry from "react-masonry-css";
 import { projects } from "@/services/data";
 import SectionTitle from "@/components/ui/section-title";
-import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import type { Project } from "@/services/data/type";
 
@@ -18,10 +16,9 @@ export default function Project() {
   };
 
   return (
-    <motion.section
+    <section
       className="project_container section_container flex_column_center_center"
       id="projects"
-      layout
     >
       <SectionTitle>Projets</SectionTitle>
       <Masonry
@@ -33,6 +30,6 @@ export default function Project() {
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </Masonry>
-    </motion.section>
+    </section>
   );
 }

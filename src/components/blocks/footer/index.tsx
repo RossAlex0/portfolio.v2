@@ -59,7 +59,7 @@ export default function Footer() {
 
       return <div className="footer_block flex_column">{children}</div>;
     },
-    []
+    [isMobile]
   );
 
   return (

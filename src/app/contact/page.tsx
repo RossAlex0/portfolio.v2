@@ -8,8 +8,6 @@ import React from "react";
 import usePostMail from "@/services/hook/usePostMail";
 import CustomModalPage from "@/components/blocks/custom-modal";
 import { useWindowSizeContext } from "@/services/context/WindowSizeContext";
-import Loading from "../loading";
-import { mobileWidth } from "@/services/const";
 
 import "./contact.css";
 

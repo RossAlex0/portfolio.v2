@@ -1,4 +1,5 @@
 import { IconName } from "../custom-icon/type";
+import { AnimationTrigger } from "./animation";
 
 export type SocialLinkProps = {
   href: string;
@@ -9,4 +10,6 @@ export type SocialLinkProps = {
   light?: boolean;
   disabledAnimation?: boolean;
   target?: "_blank" | "_self";
+  /** When the entrance animation plays (default: when scrolled into view). */
+  trigger?: AnimationTrigger;
 };

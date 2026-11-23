@@ -1,11 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Pils from "@/components/ui/pils";
 import CustomIcon from "@/components/ui/custom-icon";
 import Image from "next/image";
 import Link from "next/link";
 import { type Project } from "@/services/data/type";
+import { COLORS } from "@/services/data/site";
 
 type ProjectCardProps = {
   project: Project;
@@ -53,7 +54,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
               }}
               key={tech.name}
             >
-              <CustomIcon name={tech.icon} color="#fffcee" size={20} />
+              <CustomIcon name={tech.icon} color={COLORS.primary} size={20} />
             </Pils>
           ))}
         </div>

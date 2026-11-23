@@ -3,6 +3,8 @@
 import CustomText from "@/components/ui/custom-text";
 import CustomButton from "@/components/ui/custom-button";
 
+import { OWNER, ROUTES } from "@/services/data/site";
+
 import "./confidentialite.css";
 
 export default function Confidentialite() {
@@ -36,9 +38,12 @@ export default function Confidentialite() {
       <CustomText>
         Conformément au RGPD, vous pouvez demander à accéder, modifier ou
         supprimer vos données en envoyant un message à :{" "}
-        <strong>alexnw33910@gmail.com</strong>
+        <strong>{OWNER.email}</strong>
       </CustomText>
-      <CustomButton style={{ width: "fit-content", marginTop: "5rem" }}>
+      <CustomButton
+        href={ROUTES.home}
+        style={{ width: "fit-content", marginTop: "5rem" }}
+      >
         Retour
       </CustomButton>
     </section>

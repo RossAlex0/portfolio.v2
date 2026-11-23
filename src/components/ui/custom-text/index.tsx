@@ -1,18 +1,26 @@
 "use client";
 
+import { motion } from "motion/react";
+import { classNames } from "@/services/utils/classNames";
 import { CustomTextProps } from "./type";
-import { motion } from "framer-motion";
 
 import "./text.css";
 
-export default function CustomText({ isTitle, ...props }: CustomTextProps) {
-  const combinedClass = `${props.className} ${
-    isTitle ? "custom_title" : "custom_text"
-  } `;
+export default function CustomText({
+  isTitle,
+  as,
+  className,
+  ...props
+}: CustomTextProps) {
+  const Tag = motion[as ?? (isTitle ? "h2" : "p")];
 
-  return isTitle ? (
-    <motion.h2 {...props} className={combinedClass} />
-  ) : (
-    <motion.p {...props} className={combinedClass} />
+  return (
+    <Tag
+      {...props}
+      className={classNames(
+        className,
+        isTitle ? "custom_title" : "custom_text"
+      )}
+    />
   );
 }

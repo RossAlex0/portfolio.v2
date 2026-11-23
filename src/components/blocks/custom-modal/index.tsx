@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import CustomButton from "@/components/ui/custom-button";
 import CustomText from "@/components/ui/custom-text";
 import { ComponentProps } from "react";
 import { CustomModalPageProps } from "./type";
+import { ROUTES } from "@/services/data/site";
 
 import "./custom-modal.css";
 
@@ -14,11 +15,19 @@ export default function CustomModalPage({
   ...props
 }: CustomModalPageProps & ComponentProps<typeof motion.div>) {
   return (
-    <section className={"custom_modal_container flex_row_center_center"}>
-      <CustomButton className={"custom_modal_back_button"} theme="light">
+    <section className="custom_modal_container flex_row_center_center">
+      <CustomButton
+        href={ROUTES.home}
+        className="custom_modal_back_button"
+        theme="light"
+      >
         Retour
       </CustomButton>
-      <CustomText isTitle className="custom_modal_text_background">
+      <CustomText
+        isTitle
+        className="custom_modal_text_background"
+        aria-hidden="true"
+      >
         {backgroundText}
       </CustomText>
       <motion.div

@@ -3,6 +3,8 @@
 import CustomText from "@/components/ui/custom-text";
 import CustomButton from "@/components/ui/custom-button";
 
+import { OWNER, ROUTES } from "@/services/data/site";
+
 import "./policy.css";
 
 export default function Policy() {
@@ -14,10 +16,9 @@ export default function Policy() {
       <CustomText isTitle>Éditeur du site</CustomText>
       <CustomText>
         Ce site est édité par :<br />
-        <strong>Alex Rossignol</strong>
+        <strong>{OWNER.name}</strong>
         <br />
-        Contact :{" "}
-        <a href="mailto:alexnw33910@gmail.com">alexnw33910@gmail.com</a>
+        Contact : <a href={`mailto:${OWNER.email}`}>{OWNER.email}</a>
       </CustomText>
 
       <CustomText isTitle>Hébergement</CustomText>
@@ -31,7 +32,10 @@ export default function Policy() {
           https://vercel.com
         </a>
       </CustomText>
-      <CustomButton style={{ width: "fit-content", marginTop: "5rem" }}>
+      <CustomButton
+        href={ROUTES.home}
+        style={{ width: "fit-content", marginTop: "5rem" }}
+      >
         Retour
       </CustomButton>
     </section>

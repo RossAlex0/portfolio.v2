@@ -1,20 +1,13 @@
-import { motion } from "framer-motion";
+"use client";
+
+import { motion } from "motion/react";
 import CustomText from "@/components/ui/custom-text";
 import { timelineItems } from "@/services/data";
 import Pils from "@/components/ui/pils";
-import React from "react";
-import { useWindowSizeContext } from "@/services/context/WindowSizeContext";
 
 import "./timeline.css";
 
 export default function Timeline() {
-  const { isMobile } = useWindowSizeContext();
-
-  const renderDot = React.useCallback((item: (typeof timelineItems)[0]) => {
-    return (
-      <div className={`timeline-dot ${item.accent ? "accent" : "regular"}`} />
-    );
-  }, []);
   return (
     <section className="timeline-section">
       <div className="timeline-container">
@@ -50,7 +43,9 @@ export default function Timeline() {
                   {item.description}
                 </CustomText>
               </div>
-              {!isMobile ? renderDot(item) : undefined}
+              <div
+                className={`timeline-dot ${item.accent ? "accent" : "regular"}`}
+              />
             </motion.div>
           ))}
         </div>

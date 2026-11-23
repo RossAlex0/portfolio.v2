@@ -50,3 +50,10 @@ export type SoftSkills = {
   icon: IconName;
   exemple: string;
 };
+
+export type TimelineItem = {
+  year: string;
+  title: string;
+  description: string;
+  accent: boolean;
+};

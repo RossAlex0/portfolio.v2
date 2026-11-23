@@ -1,8 +1,7 @@
-"use client";
-
 import CustomText from "@/components/ui/custom-text";
 import CustomButton from "@/components/ui/custom-button";
 import Link from "next/link";
+import { ROUTES } from "@/services/data/site";
 
 import "./header.css";
 
@@ -24,7 +23,7 @@ export default function Header() {
           </Link>
         ))}
       </div>
-      <CustomButton href="/contact" />
+      <CustomButton href={ROUTES.contact} />
     </header>
   );
 }

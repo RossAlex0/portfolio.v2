@@ -1,40 +1,30 @@
 "use client";
 
+import { motion } from "motion/react";
 import WordsRotate from "@/components/ui/words-rotate";
-import CustomText from "@/components/ui/custom-text";
 import SocialLink from "@/components/ui/social-link";
-import { motion } from "framer-motion";
-import { useWindowSizeContext } from "@/services/context/WindowSizeContext";
+import { EXTERNAL_LINKS, ROUTES } from "@/services/data/site";
 
 import "./hero.css";
 
+const ROTATING_WORDS = ["vous.", "nous.", "tous."];
+
+const socialLinks = [
+  {
+    href: EXTERNAL_LINKS.linkedin,
+    iconName: "TbBrandLinkedin",
+    label: "LinkedIn",
+    target: undefined,
+  },
+  {
+    href: ROUTES.contact,
+    iconName: "TbMail",
+    label: "Contact",
+    target: "_self",
+  },
+] as const;
+
 export default function Hero() {
-  const { isMobile } = useWindowSizeContext();
-
-  const socialLinks = [
-    {
-      href: "https://linkedin.com/in/rossignolalex",
-      iconName: "TbBrandLinkedin",
-      label: "LinkedIn",
-      size: 46,
-      target: undefined,
-    },
-    {
-      href: "/contact",
-      iconName: "TbMail",
-      label: "Contact",
-      size: 46,
-      target: "_self",
-    },
-    {
-      href: "/meta/alex-rossignol-cv.pdf",
-      iconName: "TbFileCv",
-      label: "CV PDF",
-      size: 46,
-      target: undefined,
-    },
-  ] as const;
-
   return (
     <section className="hero section_container">
       <motion.div
@@ -44,36 +34,21 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         viewport={{ amount: 0, once: true }}
       >
-        {isMobile ? (
-          <>
-            <CustomText className="hero_title" isTitle>
-              Développeur passionné de solutions web et mobile, conçues
-            </CustomText>
-            <CustomText
-              className="hero_title"
-              style={{ overflow: "hidden" }}
-              isTitle
-            >
-              pour&nbsp;
-              <WordsRotate words={["vous.", "nous.", "tous."]} />
-            </CustomText>
-          </>
-        ) : (
-          <>
-            <CustomText className="hero_title" isTitle>
-              Développeur passionné de <br />
-              solutions web et mobile,
-            </CustomText>
-            <CustomText
-              className="hero_title"
-              style={{ overflow: "hidden" }}
-              isTitle
-            >
-              conçues pour&nbsp;
-              <WordsRotate words={["vous.", "nous.", "tous."]} />
-            </CustomText>
-          </>
-        )}
+        <h1 className="hero_heading">
+          <span className="hero_title custom_title">
+            Développeur passionné de <br className="hide_is_mobile" />
+            solutions web et mobile,
+            <span className="only_mobile"> conçues</span>
+          </span>
+          <span
+            className="hero_title custom_title"
+            style={{ overflow: "hidden" }}
+          >
+            <span className="hide_is_mobile">conçues&nbsp;</span>
+            pour&nbsp;
+            <WordsRotate words={ROTATING_WORDS} />
+          </span>
+        </h1>
       </motion.div>
       <div className="hero_link flex_row_center_center">
         {socialLinks.map((link, index) => (
@@ -83,8 +58,9 @@ export default function Hero() {
             iconName={link.iconName}
             label={link.label}
             delay={index}
-            size={link.size}
+            size={46}
             target={link.target}
+            trigger="mount"
           />
         ))}
       </div>

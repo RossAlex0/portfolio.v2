@@ -82,6 +82,7 @@ main {
   --secondary-color: #171717;
   --light-grey-color: #e0e0e0b5;
   --grey-color: #5a5a5a8a;
+  --dark-pill-color: #0a1117dd;
 
   --min-text-size: 12px;
   --text-size: 16px;
@@ -89,9 +90,19 @@ main {
   --title-size: 24px;
 }
 
+.only_mobile {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .section_container {
     width: 100%;
     padding: 5lvh 1.5rem 0 1.5rem;
+  }
+  .hide_is_mobile {
+    display: none;
+  }
+  .only_mobile {
+    display: revert;
   }
 }

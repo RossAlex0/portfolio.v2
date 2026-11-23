@@ -7,34 +7,17 @@ export default function Pils({
   containerStyle,
   textStyle,
   dark,
+  children,
   ...props
 }: PilsProps) {
-  const accentStyleText = dark
-    ? {
-        color: "#fffcee",
-      }
-    : {
-        color: "#171717",
-      };
-  const accentStyleContainer = dark
-    ? {
-        backgroundColor: "#0a1117dd",
-      }
-    : {
-        backgroundColor: "#e0e0e0b5",
-      };
-
   return (
     <div
       {...props}
-      className="pils_container"
-      style={{ ...accentStyleContainer, ...containerStyle }}
+      className={`pils_container ${dark ? "pils_dark" : "pils_light"}`}
+      style={containerStyle}
     >
-      <CustomText
-        className="pils_content"
-        style={{ ...accentStyleText, ...textStyle }}
-      >
-        {props.children}
+      <CustomText className="pils_content" style={textStyle}>
+        {children}
       </CustomText>
     </div>
   );

@@ -1,37 +1,31 @@
-import React from "react";
 import CustomText from "@/components/ui/custom-text";
 import SectionTitle from "@/components/ui/section-title";
 import Timeline from "@/components/blocks/timeline";
 import SocialLink from "@/components/ui/social-link";
+import { EXTERNAL_LINKS } from "@/services/data/site";
 
 import "./about.css";
 
-export default function About() {
-  const strong = React.useCallback(
-    (word: string) => <span className="strong">{word}</span>,
-    []
-  );
+function Strong({ children }: { children: React.ReactNode }) {
+  return <span className="strong">{children}</span>;
+}
 
+export default function About() {
   const socialLinks = [
     {
-      href: "https://github.com/RossAlex0",
+      href: EXTERNAL_LINKS.github,
       iconName: "TbBrandGithub",
       label: "GitHub",
     },
     {
-      href: "https://gitlab.com/alex.rossignol",
+      href: EXTERNAL_LINKS.gitlab,
       iconName: "TbBrandGitlab",
       label: "GitLab",
     },
     {
-      href: "https://linkedin.com/in/rossignolalex",
+      href: EXTERNAL_LINKS.linkedin,
       iconName: "TbBrandLinkedin",
       label: "LinkedIn",
-    },
-    {
-      href: "/meta/alex-rossignol-cv.pdf",
-      iconName: "TbFileCv",
-      label: "CV PDF",
     },
   ] as const;
 
@@ -46,11 +40,12 @@ export default function About() {
           transition={{ duration: 0.3 }}
           viewport={{ amount: 0.1, once: true }}
         >
-          {strong("Développeur web")} basé à Toulouse, je conçois des{" "}
-          {strong("applications")} web et mobiles avec le coeur. Anciennement
-          agent de sécurité pénitentiaire, je me suis reconverti en 2024 pour
-          devenir {strong("développeur et concepteur d’applications")}, après
-          une période d’apprentissage en autodidacte.
+          <Strong>Développeur web</Strong> basé à Toulouse, je conçois des{" "}
+          <Strong>applications</Strong> web et mobiles avec le coeur.
+          Anciennement agent de sécurité pénitentiaire, je me suis reconverti en
+          2024 pour devenir{" "}
+          <Strong>développeur et concepteur d’applications</Strong>, après une
+          période d’apprentissage en autodidacte.
         </CustomText>
       </div>
       <div className="about_content flex_column">

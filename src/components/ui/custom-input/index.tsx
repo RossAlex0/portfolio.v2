@@ -1,12 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { CustomInputProps } from "./type";
 import "./custom-input.css";
 import CustomIcon from "../custom-icon";
+import { COLORS } from "@/services/data/site";
 
 export default function CustomInput({
   label,
-  inputWidth,
   isTextArea,
   value,
   setValue,
@@ -23,16 +23,13 @@ export default function CustomInput({
   const focusCircle = React.useCallback(
     () => (
       <div className="custom_input_chevron">
-        <CustomIcon name="TbCircle" color="#171717" size={8} />
+        <CustomIcon name="TbCircle" color={COLORS.secondary} size={8} />
       </div>
     ),
     []
   );
   return (
-    <motion.div
-      className="input_container"
-      style={inputWidth ? { width: `${inputWidth}` } : undefined}
-    >
+    <motion.div className="input_container">
       {isTextArea ? (
         <>
           <textarea
@@ -74,6 +71,7 @@ export default function CustomInput({
                 left: 0,
                 scale: 0.7,
                 y: 0,
+                // Literal: motion cannot interpolate CSS variables.
                 color: "#171717",
               }
             : {

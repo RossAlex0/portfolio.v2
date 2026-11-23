@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import CustomIcon from "@/components/ui/custom-icon";
 import CustomText from "@/components/ui/custom-text";
 import { SoftSkillElementProps } from "./type";

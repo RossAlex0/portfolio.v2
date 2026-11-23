@@ -7,3 +7,8 @@
   color: var(--secondary-color);
   font-family: var(--font-title-bold);
 }
+
+/* Keeps an h1 visually identical to the default h2 title size. */
+h1.custom_title.title_as_h2 {
+  font-size: 1.5em;
+}

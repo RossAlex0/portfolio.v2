@@ -93,89 +93,94 @@ export const metadata: Metadata = {
   creator: "Rossignol Alex",
   category: "software engineer",
   other: {
-    legal: "https://www.alex-rossignol.fr/confidentialite",
-    privacyPolicy: "https://www.alex-rossignol.fr/policy",
-    "application/ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@graph": [
+    legal: "https://www.alex-rossignol.fr/policy",
+    privacyPolicy: "https://www.alex-rossignol.fr/confidentialite",
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: "Alex Rossignol",
+      jobTitle: "Développeur Web & Mobile",
+      email: "mailto:alexnw33910@gmail.com",
+      telephone: "+33666447169",
+      sameAs: [
+        "https://github.com/RossAlex0",
+        "https://linkedin.com/in/rossignolalex",
+        "https://gitlab.com/alex.rossignol",
+        "https://www.alex-rossignol.fr",
+        "https://alex-rossignol.fr",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Toulouse",
+        addressCountry: "FR",
+      },
+      award: [
+        "Développeur web et web mobile",
+        "Vice champion de france handball -18ans",
+      ],
+      alumniOf: [
         {
-          "@type": "Person",
-          name: "Alex Rossignol",
-          jobTitle: "Développeur Web & Mobile",
-          email: "mailto:alexnw33910@gmail.com",
-          telephone: "+33666447169",
-          sameAs: [
-            "https://github.com/RossAlex0",
-            "https://linkedin.com/in/rossignolalex",
-            "https://gitlab.com/alex.rossignol",
-            "https://www.alex-rossignol.fr",
-            "https://alex-rossignol.fr",
-          ],
-          jobLocation: "Toulouse, France",
-          award: [
-            "Développeur web et web mobile",
-            "Vice champion de france handball -18ans",
-          ],
-          alumniOf: [
-            {
-              "@type": "EducationalOrganization",
-              name: "OpenClassrooms",
-              description: "Formation Développeur web",
-            },
-            {
-              "@type": "EducationalOrganization",
-              name: "OpenClassrooms",
-              description: "Formation Développeur SwiftUI",
-            },
-            {
-              "@type": "EducationalOrganization",
-              name: "Wild Code School",
-              description: "Formation Développeur web et web mobile",
-            },
-            {
-              "@type": "EducationalOrganization",
-              name: "O'Clock",
-              description: "Formation Concepteur et développeur d'applications",
-            },
-            {
-              "@type": "EducationalOrganization",
-              name: "Lycée Max Linder",
-            },
-          ],
-          knowsAbout: [
-            "react",
-            "react-native",
-            "html",
-            "css",
-            "javascript",
-            "typescript",
-            "swiftui",
-            "docker",
-            "express.js",
-            "node.js",
-            "mongodb",
-            "mysql",
-            "prisma",
-            "sequelize",
-            "postgresql",
-            "directus",
-            "next.js",
-            "vite.js",
-            "vercel",
-            "aws",
-            "SEO",
-            "vue.js",
-            "graphql",
-            "API rest",
-            "UI/UX",
-            "MVC",
-            "JSON",
-            "YAML",
-          ],
+          "@type": "EducationalOrganization",
+          name: "OpenClassrooms",
+          description: "Formation Développeur web",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "OpenClassrooms",
+          description: "Formation Développeur SwiftUI",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "Wild Code School",
+          description: "Formation Développeur web et web mobile",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "O'Clock",
+          description: "Formation Concepteur et développeur d'applications",
+        },
+        {
+          "@type": "EducationalOrganization",
+          name: "Lycée Max Linder",
         },
       ],
-    }),
-  },
+      knowsAbout: [
+        "react",
+        "react-native",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "swiftui",
+        "docker",
+        "express.js",
+        "node.js",
+        "mongodb",
+        "mysql",
+        "prisma",
+        "sequelize",
+        "postgresql",
+        "directus",
+        "next.js",
+        "vite.js",
+        "vercel",
+        "aws",
+        "SEO",
+        "vue.js",
+        "graphql",
+        "API rest",
+        "UI/UX",
+        "MVC",
+        "JSON",
+        "YAML",
+      ],
+    },
+  ],
 };
 
 export const dmBold = localFont({
@@ -221,6 +226,10 @@ export default function RootLayout({
   `}
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <WindowSizeProvider>{children}</WindowSizeProvider>
         <Analytics mode="production" />
         <SpeedInsights />

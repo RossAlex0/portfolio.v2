@@ -132,7 +132,9 @@ export default function Footer() {
         </>
       )}
 
-      <h1 className="title_footer">Developpeur Full Stack.</h1>
+      <div className="title_footer" aria-hidden="true">
+        Developpeur Full Stack.
+      </div>
     </footer>
   );
 }

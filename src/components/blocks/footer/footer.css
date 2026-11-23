@@ -57,6 +57,7 @@
 }
 .title_footer {
   font-size: 7rem;
+  font-weight: bold;
   margin-top: -2rem;
   font-family: var(--font-text-bold);
   background: linear-gradient(to bottom, #0000000a, var(--primary-color));
@@ -147,8 +148,5 @@
   }
   .infos_title p {
     margin-top: 0.5rem;
-  }
-  .hide_is_mobile {
-    display: none;
   }
 }

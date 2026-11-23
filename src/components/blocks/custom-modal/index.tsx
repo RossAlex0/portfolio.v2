@@ -14,11 +14,15 @@ export default function CustomModalPage({
   ...props
 }: CustomModalPageProps & ComponentProps<typeof motion.div>) {
   return (
-    <section className={"custom_modal_container flex_row_center_center"}>
-      <CustomButton className={"custom_modal_back_button"} theme="light">
+    <section className="custom_modal_container flex_row_center_center">
+      <CustomButton href="/" className="custom_modal_back_button" theme="light">
         Retour
       </CustomButton>
-      <CustomText isTitle className="custom_modal_text_background">
+      <CustomText
+        isTitle
+        className="custom_modal_text_background"
+        aria-hidden="true"
+      >
         {backgroundText}
       </CustomText>
       <motion.div

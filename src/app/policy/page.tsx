@@ -31,7 +31,10 @@ export default function Policy() {
           https://vercel.com
         </a>
       </CustomText>
-      <CustomButton style={{ width: "fit-content", marginTop: "5rem" }}>
+      <CustomButton
+        href="/"
+        style={{ width: "fit-content", marginTop: "5rem" }}
+      >
         Retour
       </CustomButton>
     </section>

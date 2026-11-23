@@ -79,7 +79,12 @@ export default function ProjectPage() {
   return (
     <CustomModalPage backgroundText={project.name}>
       <div className="project_modal_header flex_row_between_center">
-        <CustomText isTitle style={{ color: "#171717" }}>
+        <CustomText
+          as="h1"
+          isTitle
+          className="title_as_h2"
+          style={{ color: "#171717" }}
+        >
           {project.name}
         </CustomText>
         <div className="project_modal_header_icon">{renderSocialLinks()}</div>

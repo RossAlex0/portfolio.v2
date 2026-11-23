@@ -38,7 +38,10 @@ export default function Confidentialite() {
         supprimer vos données en envoyant un message à :{" "}
         <strong>alexnw33910@gmail.com</strong>
       </CustomText>
-      <CustomButton style={{ width: "fit-content", marginTop: "5rem" }}>
+      <CustomButton
+        href="/"
+        style={{ width: "fit-content", marginTop: "5rem" }}
+      >
         Retour
       </CustomButton>
     </section>

@@ -1,3 +1,12 @@
+.button_custom,
+.button_custom_disabled {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  /* Same size for <a> and <button> (browser default button font size). */
+  font-size: 13.3333px;
+}
+
 .button_custom {
   border: 0.5px solid var(--secondary-color);
   border-radius: 32px;

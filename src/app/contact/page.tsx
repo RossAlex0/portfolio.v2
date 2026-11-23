@@ -94,7 +94,9 @@ export default function Contact() {
     <CustomModalPage backgroundText="Contact" style={{ gap: "4rem" }}>
       {resAppi === null ? (
         <>
-          <CustomText isTitle>Contactez moi</CustomText>
+          <CustomText as="h1" isTitle className="title_as_h2">
+            Contactez moi
+          </CustomText>
 
           <div className="contact_form flex_column">
             <div
@@ -134,12 +136,10 @@ export default function Contact() {
             />
           </div>
           <div className="contact_button flex_row">
-            <CustomButton theme="light">Fermer</CustomButton>
-            <CustomButton
-              disabled={isDisabled}
-              onClick={handleClickSendButton}
-              href="#"
-            >
+            <CustomButton href="/" theme="light">
+              Fermer
+            </CustomButton>
+            <CustomButton disabled={isDisabled} onClick={handleClickSendButton}>
               Envoyer
             </CustomButton>
           </div>

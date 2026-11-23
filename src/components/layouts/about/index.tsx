@@ -27,11 +27,6 @@ export default function About() {
       iconName: "TbBrandLinkedin",
       label: "LinkedIn",
     },
-    {
-      href: EXTERNAL_LINKS.cv,
-      iconName: "TbFileCv",
-      label: "CV PDF",
-    },
   ] as const;
 
   return (

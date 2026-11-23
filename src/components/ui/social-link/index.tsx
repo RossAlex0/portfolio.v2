@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import CustomIcon from "@/components/ui/custom-icon";
 import { SocialLinkProps } from "./type";
+import { getSocialLinkAnimation } from "./animation";
 import Link from "next/link";
 import React from "react";
 import { COLORS } from "@/services/data/site";
@@ -16,21 +17,12 @@ export default function SocialLink({
   light,
   disabledAnimation,
   target = "_blank",
+  trigger,
 }: SocialLinkProps) {
   const animation = React.useMemo(
     () =>
-      disabledAnimation
-        ? // `animate` (not only `initial`) so the icon stays visible when
-          // animations get disabled after hydration.
-          { animate: { opacity: 1, x: 0 }, transition: { duration: 0 } }
-        : {
-            initial: { opacity: 0, x: -25 * (delay + 1) },
-            whileInView: { opacity: 1, x: 0 },
-            transition: { duration: 0.2 * (delay + 1) },
-            viewport: { amount: 1, once: true },
-            whileHover: { scale: 1.2 },
-          },
-    [disabledAnimation, delay]
+      getSocialLinkAnimation({ delay, disabled: disabledAnimation, trigger }),
+    [delay, disabledAnimation, trigger]
   );
 
   return (

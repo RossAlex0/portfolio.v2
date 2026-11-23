@@ -14,7 +14,6 @@ export const EXTERNAL_LINKS = {
   github: "https://github.com/RossAlex0",
   gitlab: "https://gitlab.com/alex.rossignol",
   linkedin: "https://linkedin.com/in/rossignolalex",
-  cv: "/meta/alex-rossignol-cv.pdf",
 } as const;
 
 export const ROUTES = {

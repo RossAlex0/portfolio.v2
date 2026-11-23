@@ -22,12 +22,6 @@ const socialLinks = [
     label: "Contact",
     target: "_self",
   },
-  {
-    href: EXTERNAL_LINKS.cv,
-    iconName: "TbFileCv",
-    label: "CV PDF",
-    target: undefined,
-  },
 ] as const;
 
 export default function Hero() {
@@ -66,6 +60,7 @@ export default function Hero() {
             delay={index}
             size={46}
             target={link.target}
+            trigger="mount"
           />
         ))}
       </div>

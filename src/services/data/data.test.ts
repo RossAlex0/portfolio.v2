@@ -38,10 +38,6 @@ describe("usage", () => {
     ];
     for (const icon of icons) expect(iconMap[icon], icon).toBeDefined();
   });
-
-  it("ships the CV linked from the site", () => {
-    expect(existsSync(publicFile("/meta/alex-rossignol-cv.pdf"))).toBe(true);
-  });
 });
 
 describe("edge cases", () => {

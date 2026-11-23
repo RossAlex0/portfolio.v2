@@ -33,6 +33,8 @@ import {
   SiTypescript,
   SiJavascript,
   SiNextdotjs,
+  SiSupabase,
+  SiZod,
 } from "react-icons/si";
 import {
   TbMail,
@@ -95,6 +97,8 @@ const iconSi = {
   SiOvh,
   SiGmail,
   SiNextdotjs,
+  SiSupabase,
+  SiZod,
 };
 
 const iconTb = {

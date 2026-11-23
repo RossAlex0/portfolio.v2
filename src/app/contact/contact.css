@@ -33,3 +33,12 @@
     width: 100%;
   }
 }
+
+/* Anti-spam field: invisible to humans, filled by bots. */
+.contact_honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}

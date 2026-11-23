@@ -7,14 +7,11 @@ import CustomText from "@/components/ui/custom-text";
 import React from "react";
 import usePostMail from "@/services/hook/usePostMail";
 import CustomModalPage from "@/components/blocks/custom-modal";
-import { useWindowSizeContext } from "@/services/context/WindowSizeContext";
 
 import "./contact.css";
 
 export default function Contact() {
   const router = useRouter();
-
-  const { isMobile } = useWindowSizeContext();
 
   const sendMail = usePostMail();
 
@@ -89,7 +86,6 @@ export default function Contact() {
     }
   };
 
-  const firstANdSecondInputWidth = isMobile ? "100%" : "50%";
   return (
     <CustomModalPage backgroundText="Contact" style={{ gap: "4rem" }}>
       {resAppi === null ? (
@@ -99,12 +95,9 @@ export default function Contact() {
           </CustomText>
 
           <div className="contact_form flex_column">
-            <div
-              className={`contact_name_email flex_${isMobile ? "column" : "row"}`}
-            >
+            <div className="contact_name_email flex_row">
               <CustomInput
                 label="Nom / Entreprise"
-                inputWidth={firstANdSecondInputWidth}
                 value={formContact.name}
                 setValue={(v: string) =>
                   setFormContact({ ...formContact, name: v })
@@ -112,7 +105,6 @@ export default function Contact() {
               />
               <CustomInput
                 label="Email"
-                inputWidth={firstANdSecondInputWidth}
                 value={formContact.email}
                 setValue={(v: string) =>
                   setFormContact({ ...formContact, email: v })

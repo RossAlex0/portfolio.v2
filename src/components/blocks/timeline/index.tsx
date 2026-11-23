@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import CustomText from "@/components/ui/custom-text";
 import { timelineItems } from "@/services/data";

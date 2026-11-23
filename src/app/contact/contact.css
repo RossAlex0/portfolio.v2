@@ -19,8 +19,17 @@
   gap: 2rem;
 }
 
+.contact_name_email .input_container {
+  width: 50%;
+}
+
 @media (max-width: 768px) {
-  .contact_name_email {
+  /* Higher specificity than the global .flex_row utility. */
+  .contact_form .contact_name_email {
+    flex-direction: column;
     gap: 1.5rem;
+  }
+  .contact_name_email .input_container {
+    width: 100%;
   }
 }

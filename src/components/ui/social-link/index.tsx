@@ -19,7 +19,9 @@ export default function SocialLink({
   const animation = React.useMemo(
     () =>
       disabledAnimation
-        ? { initial: { opacity: 1, x: 0 } }
+        ? // `animate` (not only `initial`) so the icon stays visible when
+          // animations get disabled after hydration.
+          { animate: { opacity: 1, x: 0 }, transition: { duration: 0 } }
         : {
             initial: { opacity: 0, x: -25 * (delay + 1) },
             whileInView: { opacity: 1, x: 0 },

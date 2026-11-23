@@ -1,80 +1,56 @@
-"use client";
-
-import { projects } from "@/services/data";
-import { IconName } from "@/components/ui/custom-icon/type";
-import React from "react";
-import { useParams, notFound } from "next/navigation";
-import CustomText from "@/components/ui/custom-text";
+import type { Metadata } from "next";
 import Image from "next/image";
+import { notFound } from "next/navigation";
+import CustomText from "@/components/ui/custom-text";
 import Pils from "@/components/ui/pils";
 import CustomModalPage from "@/components/blocks/custom-modal";
-import SocialLink from "@/components/ui/social-link";
-import { useWindowSizeContext } from "@/services/context/WindowSizeContext";
+import { projects } from "@/services/data";
+import { absoluteUrl, OWNER, ROUTES } from "@/services/data/site";
+import ProjectLinks from "./ProjectLinks";
 
 import "./project.css";
 
-export default function ProjectPage() {
-  const { id: urlProjectId } = useParams();
+type ProjectPageProps = { params: Promise<{ id: string }> };
 
-  const { isTablet } = useWindowSizeContext();
+const META_DESCRIPTION_LENGTH = 155;
 
-  const project = projects.find(
-    (project) => project.id.toString() === urlProjectId
-  );
+export const dynamicParams = false;
 
-  const renderSocialLinks = React.useCallback(() => {
-    const socialLinks = [];
+export function generateStaticParams() {
+  return projects.map((project) => ({ id: project.id.toString() }));
+}
 
-    if (!project) return [];
+const findProject = (id: string) =>
+  projects.find((project) => project.id.toString() === id);
 
-    if (project.github)
-      socialLinks.push({
-        iconName: "FaGithub",
-        href: project.github,
-        label: "Github",
-      });
-    if (project.link)
-      socialLinks.push({
-        iconName: "TbWorld",
-        href: project.link,
-        label: "Site Web",
-      });
-    if (project.video)
-      socialLinks.push({
-        iconName: "FaYoutube",
-        href: project.video,
-        label: "Video",
-      });
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const project = findProject((await params).id);
+  if (!project) return {};
 
-    return socialLinks.map((link, index) => (
-      <SocialLink
-        key={index}
-        href={link.href}
-        iconName={link.iconName as IconName}
-        delay={1}
-        size={28}
-        label={link.label}
-        disabledAnimation={isTablet}
-      />
-    ));
-  }, [isTablet, project]);
+  const title = `${project.name} – ${OWNER.name}`;
+  const description = project.description.fr
+    .replace(/\s+/g, " ")
+    .slice(0, META_DESCRIPTION_LENGTH);
+  const url = absoluteUrl(ROUTES.project(project.id));
 
-  const renderTextProjectDetails = (details: string[]) => {
-    if (!details || details.length === 0) return null;
-
-    const textDetails = details.map((d, i) => {
-      if (details.length === i + 1) return d;
-
-      return `${d} - `;
-    });
-
-    return textDetails;
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      images: [absoluteUrl(project.image)],
+    },
   };
+}
 
-  if (!project) {
-    console.warn(`Issue: Project not found with ${urlProjectId} id`);
-    notFound();
-  }
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const project = findProject((await params).id);
+  if (!project) notFound();
 
   return (
     <CustomModalPage backgroundText={project.name}>
@@ -83,11 +59,11 @@ export default function ProjectPage() {
           as="h1"
           isTitle
           className="title_as_h2"
-          style={{ color: "#171717" }}
+          style={{ color: "var(--secondary-color)" }}
         >
           {project.name}
         </CustomText>
-        <div className="project_modal_header_icon">{renderSocialLinks()}</div>
+        <ProjectLinks project={project} />
       </div>
       <div className="project_modal_separator" />
       <div className="project_modal_techno_image flex_row_between">
@@ -101,7 +77,7 @@ export default function ProjectPage() {
         <div className="project_modal_techno flex_row">
           {project.techno.map((tech) => (
             <Pils
-              key={`${project.name}${tech.name}`}
+              key={tech.name}
               containerStyle={{
                 paddingInline: "0.8rem",
                 paddingBlock: "0.4rem",
@@ -118,8 +94,8 @@ export default function ProjectPage() {
         className="project_text_bold"
         style={{ marginBottom: "2rem" }}
       >
-        {project.year} / {renderTextProjectDetails(project.format)} /{" "}
-        {renderTextProjectDetails(project.type)} / Projet {project.style}
+        {project.year} / {project.format.join(" - ")} /{" "}
+        {project.type.join(" - ")} / Projet {project.style}
       </CustomText>
       <CustomText className="project_text_font">
         {project.description.fr}

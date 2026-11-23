@@ -5,39 +5,36 @@ import { useWindowSize } from "@/services/hook/useWindowSize";
 import { mobileWidth, tabletPortraitWidth } from "@/services/const";
 
 type WindowSizeContextType = {
-  width?: number;
-  height?: number;
   isMobile: boolean;
   isTablet: boolean;
-  mounted: boolean;
 };
 
 const WindowSizeContext = React.createContext<WindowSizeContextType>({
-  width: undefined,
-  height: undefined,
   isMobile: false,
   isTablet: false,
-  mounted: false,
 });
 
+/**
+ * Exposes viewport breakpoints for behaviour only (animations).
+ * Layout must stay in CSS media queries: values are `false` during SSR.
+ */
 export function WindowSizeProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { width, height } = useWindowSize();
-  const mounted = width !== undefined;
+  const { width } = useWindowSize();
+
+  const value = React.useMemo(
+    () => ({
+      isMobile: width !== undefined && width <= mobileWidth,
+      isTablet: width !== undefined && width <= tabletPortraitWidth,
+    }),
+    [width]
+  );
 
   return (
-    <WindowSizeContext.Provider
-      value={{
-        width,
-        height,
-        isMobile: width === undefined ? false : width <= mobileWidth,
-        isTablet: width === undefined ? false : width <= tabletPortraitWidth,
-        mounted,
-      }}
-    >
+    <WindowSizeContext.Provider value={value}>
       {children}
     </WindowSizeContext.Provider>
   );

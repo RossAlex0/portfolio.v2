@@ -6,7 +6,6 @@ import CustomIcon from "../custom-icon";
 
 export default function CustomInput({
   label,
-  inputWidth,
   isTextArea,
   value,
   setValue,
@@ -29,10 +28,7 @@ export default function CustomInput({
     []
   );
   return (
-    <motion.div
-      className="input_container"
-      style={inputWidth ? { width: `${inputWidth}` } : undefined}
-    >
+    <motion.div className="input_container">
       {isTextArea ? (
         <>
           <textarea

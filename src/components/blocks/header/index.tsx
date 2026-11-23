@@ -1,5 +1,3 @@
-"use client";
-
 import CustomText from "@/components/ui/custom-text";
 import CustomButton from "@/components/ui/custom-button";
 import Link from "next/link";

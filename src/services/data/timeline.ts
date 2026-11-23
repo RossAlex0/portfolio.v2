@@ -2,16 +2,22 @@ import { TimelineItem } from "./type";
 
 export const timelineItems: TimelineItem[] = [
   {
+    year: "2026",
+    title: "Hinfact",
+    description: "CDI - Développeur Full-Stack",
+    accent: true,
+  },
+  {
     year: "2025",
     title: "Hinfact",
     description: "Alternance - Développeur web & mobile Full-Stack",
-    accent: true,
+    accent: false,
   },
   {
     year: "2025",
     title: "Concepteur et développeur d'applications",
     description: "O'Clock - Alternance - titre RNCP niveau 6",
-    accent: true,
+    accent: false,
   },
   {
     year: "2025",

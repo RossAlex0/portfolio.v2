@@ -7,25 +7,27 @@ type WindowSize = {
   height?: number;
 };
 
+const SERVER_SIZE: WindowSize = { width: undefined, height: undefined };
+
+let cachedSize: WindowSize = SERVER_SIZE;
+
+function subscribe(onChange: () => void) {
+  window.addEventListener("resize", onChange);
+  return () => window.removeEventListener("resize", onChange);
+}
+
+function getSnapshot(): WindowSize {
+  const { innerWidth, innerHeight } = window;
+  if (cachedSize.width !== innerWidth || cachedSize.height !== innerHeight) {
+    cachedSize = { width: innerWidth, height: innerHeight };
+  }
+  return cachedSize;
+}
+
+function getServerSnapshot(): WindowSize {
+  return SERVER_SIZE;
+}
+
 export function useWindowSize(): WindowSize {
-  const [windowSize, setWindowSize] = React.useState<WindowSize>({
-    width: undefined,
-    height: undefined,
-  });
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({
-        width: window?.innerWidth,
-        height: window?.innerHeight,
-      });
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowSize;
+  return React.useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }

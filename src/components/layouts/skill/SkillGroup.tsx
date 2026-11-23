@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Pils from "@/components/ui/pils";
 import { SkillGroupProps } from "./type";
 

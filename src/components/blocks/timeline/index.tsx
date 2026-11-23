@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import CustomText from "@/components/ui/custom-text";
 import { timelineItems } from "@/services/data";
 import Pils from "@/components/ui/pils";

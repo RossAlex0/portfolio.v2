@@ -3,7 +3,7 @@
 import WordsRotate from "@/components/ui/words-rotate";
 import CustomText from "@/components/ui/custom-text";
 import SocialLink from "@/components/ui/social-link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useWindowSizeContext } from "@/services/context/WindowSizeContext";
 
 import "./hero.css";

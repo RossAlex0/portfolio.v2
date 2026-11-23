@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import CustomButton from "@/components/ui/custom-button";
 import CustomText from "@/components/ui/custom-text";
 import { ComponentProps } from "react";

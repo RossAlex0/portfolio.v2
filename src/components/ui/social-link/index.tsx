@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import CustomIcon from "@/components/ui/custom-icon";
 import { SocialLinkProps } from "./type";
 import Link from "next/link";
@@ -27,7 +27,7 @@ export default function SocialLink({
             viewport: { amount: 1, once: true },
             whileHover: { scale: 1.2 },
           },
-    [disabledAnimation]
+    [disabledAnimation, delay]
   );
 
   return (

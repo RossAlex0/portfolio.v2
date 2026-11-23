@@ -26,11 +26,7 @@ export function WindowSizeProvider({
   children: React.ReactNode;
 }) {
   const { width, height } = useWindowSize();
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = width !== undefined;
 
   return (
     <WindowSizeContext.Provider

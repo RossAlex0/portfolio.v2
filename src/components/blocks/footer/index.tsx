@@ -2,7 +2,7 @@ import CustomText from "@/components/ui/custom-text";
 import CustomIcon from "@/components/ui/custom-icon";
 import Link from "next/link";
 import SocialLink from "@/components/ui/social-link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useWindowSizeContext } from "@/services/context/WindowSizeContext";
 
 import "./footer.css";

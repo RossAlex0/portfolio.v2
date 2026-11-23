@@ -1,7 +1,7 @@
 "use client";
 
 import { CustomTextProps } from "./type";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import "./text.css";
 

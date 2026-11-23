@@ -46,7 +46,6 @@ export const softSkills: SoftSkills[] = [
   },
 ];
 export const hardSkills = [
-  "Css",
   "Javascript",
   "TypeScript",
   "React",
@@ -56,8 +55,10 @@ export const hardSkills = [
   "Express",
   "MongoDb",
   "PostgreSQL",
-  "MySQL",
   "Docker",
+  "Kubernetes",
+  "Helm",
+  "ArgoCD",
 ];
 
 export const toolSkills = [
@@ -72,4 +73,7 @@ export const toolSkills = [
   "GitHub",
   "Figma",
   "Expo",
+  "Notion",
+  "Xcode",
+  "Claude Code",
 ];

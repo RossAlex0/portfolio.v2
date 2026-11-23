@@ -5,6 +5,7 @@ import CustomButton from "@/components/ui/custom-button";
 import CustomText from "@/components/ui/custom-text";
 import { ComponentProps } from "react";
 import { CustomModalPageProps } from "./type";
+import { ROUTES } from "@/services/data/site";
 
 import "./custom-modal.css";
 
@@ -15,7 +16,11 @@ export default function CustomModalPage({
 }: CustomModalPageProps & ComponentProps<typeof motion.div>) {
   return (
     <section className="custom_modal_container flex_row_center_center">
-      <CustomButton href="/" className="custom_modal_back_button" theme="light">
+      <CustomButton
+        href={ROUTES.home}
+        className="custom_modal_back_button"
+        theme="light"
+      >
         Retour
       </CustomButton>
       <CustomText

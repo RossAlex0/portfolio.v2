@@ -2,6 +2,7 @@ import CustomText from "@/components/ui/custom-text";
 import SectionTitle from "@/components/ui/section-title";
 import Timeline from "@/components/blocks/timeline";
 import SocialLink from "@/components/ui/social-link";
+import { EXTERNAL_LINKS } from "@/services/data/site";
 
 import "./about.css";
 
@@ -12,22 +13,22 @@ function Strong({ children }: { children: React.ReactNode }) {
 export default function About() {
   const socialLinks = [
     {
-      href: "https://github.com/RossAlex0",
+      href: EXTERNAL_LINKS.github,
       iconName: "TbBrandGithub",
       label: "GitHub",
     },
     {
-      href: "https://gitlab.com/alex.rossignol",
+      href: EXTERNAL_LINKS.gitlab,
       iconName: "TbBrandGitlab",
       label: "GitLab",
     },
     {
-      href: "https://linkedin.com/in/rossignolalex",
+      href: EXTERNAL_LINKS.linkedin,
       iconName: "TbBrandLinkedin",
       label: "LinkedIn",
     },
     {
-      href: "/meta/alex-rossignol-cv.pdf",
+      href: EXTERNAL_LINKS.cv,
       iconName: "TbFileCv",
       label: "CV PDF",
     },

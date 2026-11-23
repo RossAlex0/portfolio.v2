@@ -11,3 +11,17 @@
   font-size: 0.8em;
   white-space: nowrap;
 }
+
+.pils_dark {
+  background-color: var(--dark-pill-color);
+}
+.pils_light {
+  background-color: var(--light-grey-color);
+}
+/* Higher specificity than .custom_text color. */
+.pils_dark .pils_content.custom_text {
+  color: var(--primary-color);
+}
+.pils_light .pils_content.custom_text {
+  color: var(--secondary-color);
+}

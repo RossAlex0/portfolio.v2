@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import WordsRotate from "@/components/ui/words-rotate";
 import SocialLink from "@/components/ui/social-link";
+import { EXTERNAL_LINKS, ROUTES } from "@/services/data/site";
 
 import "./hero.css";
 
@@ -10,14 +11,19 @@ const ROTATING_WORDS = ["vous.", "nous.", "tous."];
 
 const socialLinks = [
   {
-    href: "https://linkedin.com/in/rossignolalex",
+    href: EXTERNAL_LINKS.linkedin,
     iconName: "TbBrandLinkedin",
     label: "LinkedIn",
     target: undefined,
   },
-  { href: "/contact", iconName: "TbMail", label: "Contact", target: "_self" },
   {
-    href: "/meta/alex-rossignol-cv.pdf",
+    href: ROUTES.contact,
+    iconName: "TbMail",
+    label: "Contact",
+    target: "_self",
+  },
+  {
+    href: EXTERNAL_LINKS.cv,
     iconName: "TbFileCv",
     label: "CV PDF",
     target: undefined,

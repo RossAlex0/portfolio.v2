@@ -28,3 +28,9 @@ export const ROUTES = {
 /** Builds an absolute URL from a site path. */
 export const absoluteUrl = (path = "/") =>
   `${SITE_URL}${path === "/" ? "" : path}`;
+
+/** CSS custom properties from globals.css, for inline styles and icon colors. */
+export const COLORS = {
+  primary: "var(--primary-color)",
+  secondary: "var(--secondary-color)",
+} as const;

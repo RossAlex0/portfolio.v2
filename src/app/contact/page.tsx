@@ -8,6 +8,8 @@ import React from "react";
 import usePostMail from "@/services/hook/usePostMail";
 import CustomModalPage from "@/components/blocks/custom-modal";
 
+import { COLORS, ROUTES } from "@/services/data/site";
+
 import "./contact.css";
 
 export default function Contact() {
@@ -50,7 +52,7 @@ export default function Contact() {
       <div className="res_api flex_column_center_center">
         <CustomText
           isTitle
-          style={{ color: "#fffcee", margin: "auto", fontSize: "1.8rem" }}
+          style={{ color: COLORS.primary, margin: "auto", fontSize: "1.8rem" }}
         >
           {resAppi
             ? "- Votre message a bien été envoyé ✅ -"
@@ -58,7 +60,7 @@ export default function Contact() {
         </CustomText>
         <CustomText
           isTitle
-          style={{ color: "#fffcee", margin: "auto", fontSize: "1.8rem" }}
+          style={{ color: COLORS.primary, margin: "auto", fontSize: "1.8rem" }}
         >
           – Vous allez être redirigé vers la page d’accueil –
         </CustomText>
@@ -128,7 +130,7 @@ export default function Contact() {
             />
           </div>
           <div className="contact_button flex_row">
-            <CustomButton href="/" theme="light">
+            <CustomButton href={ROUTES.home} theme="light">
               Fermer
             </CustomButton>
             <CustomButton disabled={isDisabled} onClick={handleClickSendButton}>

@@ -7,6 +7,8 @@ import SocialLink from "@/components/ui/social-link";
 import { motion } from "motion/react";
 import { useWindowSizeContext } from "@/services/context/WindowSizeContext";
 
+import { COLORS, EXTERNAL_LINKS, OWNER, ROUTES } from "@/services/data/site";
+
 import "./footer.css";
 
 /** Reveal animation on desktop only (disabled on mobile for scroll perf). */
@@ -33,28 +35,28 @@ function FooterReveal({ children }: { children: React.ReactNode }) {
 export default function Footer() {
   const socialLinks = [
     {
-      href: "https://github.com/RossAlex0",
+      href: EXTERNAL_LINKS.github,
       iconName: "FaGithub",
       label: "Github",
       light: true,
       size: 28,
     },
     {
-      href: "https://gitlab.com/alex.rossignol",
+      href: EXTERNAL_LINKS.gitlab,
       iconName: "SiGitlab",
       label: "Gitlab",
       light: true,
       size: 28,
     },
     {
-      href: "https://linkedin.com/in/rossignolalex",
+      href: EXTERNAL_LINKS.linkedin,
       iconName: "SiLinkedin",
       label: "LinkedIn",
       light: true,
       size: 28,
     },
     {
-      href: "/contact",
+      href: ROUTES.contact,
       iconName: "TbMail",
       label: "Email",
       light: true,
@@ -68,15 +70,19 @@ export default function Footer() {
         <div className="footer_head_block flex_row">
           <div className="footer_head_infos flex_column">
             <div className="infos_title flex_row">
-              <CustomIcon name="FaCode" color="#fffcee" className="icons" />
+              <CustomIcon
+                name="FaCode"
+                color={COLORS.primary}
+                className="icons"
+              />
               <CustomText>Full Stack Developer & Mobile Developer</CustomText>
             </div>
             <CustomText className="infos_user">Toulouse, France.</CustomText>
             <CustomText className="infos_user">
-              <a href="mailto:alexnw33910@gmail.com">alexnw33910@gmail.com</a>
+              <a href={`mailto:${OWNER.email}`}>{OWNER.email}</a>
             </CustomText>
             <CustomText className="infos_user">
-              <a href="tel:+33666447169">06 66 44 71 69</a>
+              <a href={`tel:${OWNER.phone}`}>{OWNER.phoneDisplay}</a>
             </CustomText>
           </div>
           <div className="footer_head_infos flex_column">
@@ -102,13 +108,13 @@ export default function Footer() {
         </div>
         <div className="footer_footer flex_row_between">
           <CustomText className="infos_user legal_link">
-            © 2025 – Tous droits réservés · Alex Rossignol
+            © {new Date().getFullYear()} – Tous droits réservés · {OWNER.name}
           </CustomText>
           <div className="footer_legal flex_row">
             <Link
-              href="/confidentialite"
+              href={ROUTES.privacy}
               prefetch={false}
-              style={{ color: "#fffcee" }}
+              style={{ color: COLORS.primary }}
             >
               <CustomText className="infos_user legal_link">
                 Politique de confidentialités
@@ -117,7 +123,11 @@ export default function Footer() {
             <CustomText className="infos_user legal_link hide_is_mobile">
               -
             </CustomText>
-            <Link href="/policy" prefetch={false} style={{ color: "#fffcee" }}>
+            <Link
+              href={ROUTES.legal}
+              prefetch={false}
+              style={{ color: COLORS.primary }}
+            >
               <CustomText className="infos_user legal_link">
                 Mentions légales
               </CustomText>

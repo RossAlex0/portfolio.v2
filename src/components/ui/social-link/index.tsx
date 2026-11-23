@@ -5,6 +5,7 @@ import CustomIcon from "@/components/ui/custom-icon";
 import { SocialLinkProps } from "./type";
 import Link from "next/link";
 import React from "react";
+import { COLORS } from "@/services/data/site";
 
 export default function SocialLink({
   href,
@@ -43,7 +44,7 @@ export default function SocialLink({
         <CustomIcon
           name={iconName}
           size={size}
-          color={light ? "#fffcee" : "#171717"}
+          color={light ? COLORS.primary : COLORS.secondary}
         />
       </motion.div>
     </Link>
